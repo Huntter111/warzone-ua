@@ -4,7 +4,7 @@
 	}
 }
 .main-page {
-	@include adaptiveValue('padding-top', 250, 150, 0, 991, 767);
+	@include adaptiveValue('padding-top', 290, 250, 0, 991, 767);
 	position: relative;
 	&__background {
 		position: absolute;
@@ -75,19 +75,21 @@
 	@include adaptiveValue('margin-bottom', 110, 50, 0, 767, 600);
 	&__sub-title {
 		font-weight: 700;
-		@include adaptiveValue('font-size', 36, 17, 0, 991, 767);
+		@include adaptiveValue('font-size', 36, 28, 0, 991, 767);
 		line-height: math.div(43, 36);
 		color: #bddb06;
 		opacity: 0.9;
+		text-align: center;
 	}
 
 	&__title {
-		font-family: 'Kiln Serif';
-		font-style: normal;
-		font-weight: 400;
-		@include adaptiveValue('font-size', 200, 55, 0, 1140, 400);
+		font-family: 'Kiln';
+		@include adaptiveValue('font-size', 200, 70, 0, 1140, 400);
 		line-height: math.div(240, 200);
 		color: #bddb06;
+		@media (max-width: em(380)) {
+			@include adaptiveValue('font-size', 68, 58, 0, 380, 330);
+		}
 	}
 }
 .social-media {
