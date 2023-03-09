@@ -1,8 +1,7 @@
 //====================================================================================================
 .header {
-	padding-top: rem(30);
-	padding-bottom: rem(30);
-
+	@include adaptiveValue('padding-top', 30, 15, 0, 767, 500);
+	@include adaptiveValue('padding-bottom', 30, 15, 0, 767, 500);
 	position: fixed;
 	width: 100%;
 	top: 0;
@@ -18,6 +17,8 @@
 	}
 	// .header__logo
 	&__logo {
+		position: relative;
+		z-index: 5;
 		img {
 			@include adaptiveValue('width', 140, 100, 0, 991, 767);
 		}
@@ -70,7 +71,7 @@
 		display: flex;
 		@include adaptiveValue('column-gap', 30, 20, 0, 991, 767);
 		@media (max-width: $mobile) {
-			padding-top: rem(100);
+			padding-top: rem(120);
 			font-size: rem(30);
 			flex-direction: column;
 			align-items: center;
@@ -118,6 +119,10 @@
 	align-items: center;
 	column-gap: rem(20);
 	&__icon {
+	}
+	&__button {
+		position: relative;
+		// z-index: 10;
 	}
 }
 .icon-menu {

@@ -1,3 +1,25 @@
 //====================================================================================================
+.footer {
+	background: #101d0b;
+	&__container {
+		@include adaptiveValue('padding-top', 40, 30, 0, 991, 767);
+		@include adaptiveValue('padding-bottom', 40, 30, 0, 991, 767);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			row-gap: rem(20);
+		}
+	}
+
+	&__copy {
+		@include adaptiveValue('font-size', 18, 16, 0, 991, 767);
+		line-height: 1.35;
+	}
+	&__media {
+		@include adaptiveValue('column-gap', 40, 20, 0, 991, 767);
+	}
+}
 
 //====================================================================================================

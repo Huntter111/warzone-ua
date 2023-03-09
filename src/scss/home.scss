@@ -7,15 +7,29 @@
 .main-page {
 	@include adaptiveValue('padding-top', 290, 250, 0, 991, 767);
 	position: relative;
+	// height: 100vh;
 	&__background {
 		position: absolute;
 		z-index: -1;
 		top: 0;
 		left: 0;
 		width: 100%;
-		opacity: 0.1;
+		opacity: 1;
+		min-height: -webkit-fill-available;
 		min-height: 100vh;
-		background: url('@img/main/background.png') 0 0 / cover no-repeat;
+		background: #050d02
+			radial-gradient(138.43% 85.75% at 21.6% 26.01%, rgba(8, 219, 6, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+		&::before {
+			position: absolute;
+			content: '';
+			background: url('@img/main/background.png') 0 0 / cover no-repeat;
+			opacity: 0.1;
+			top: 0;
+			left: 0;
+			min-height: 100vh;
+			width: 100vw;
+			z-index: 0;
+		}
 	}
 
 	&__container {
@@ -120,7 +134,6 @@
 		height: rem(55);
 		border-radius: 50%;
 		img {
-			// animation: down 1s infinite;
 			animation: sdb05 1.5s infinite;
 		}
 		&:not(:last-child) {
@@ -140,33 +153,13 @@
 			opacity: 0;
 		}
 	}
-	// @keyframes down {
-	// 	0% {
-	// 		transform: translate(0);
-	// 	}
-	// 	20% {
-	// 		transform: translateY(20px);
-	// 	}
-	// 	40% {
-	// 		transform: translate(0);
-	// 	}
-	// }
-	// @keyframes spin {
-	// 	0%,
-	// 	100% {
-	// 		transform: translate(0, 50%);
-	// 	}
-	// 	50% {
-	// 		transform: translate(0, -20%);
-	// 	}
-	// }
 	&__block-icon {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		flex-wrap: wrap;
 		row-gap: rem(15);
-		@include adaptiveValue('column-gap', 76, 30, 0, 767, 400);
+		@include adaptiveValue('column-gap', 76, 30, 0, 991, 767);
 	}
 	&__link {
 		padding: rem(10);
@@ -283,7 +276,7 @@
 		display: flex;
 		@include adaptiveValue('column-gap', 111, 40, 0, 1110, 991);
 		@media (max-width: $mobile) {
-			flex-direction: column;
+			flex-direction: column-reverse;
 			row-gap: rem(40);
 		}
 	}
@@ -337,6 +330,9 @@
 		display: flex;
 		flex-direction: column;
 		@include adaptiveValue('row-gap', 40, 30, 0, 991, 767);
+		@media (max-width: $mobile) {
+			flex-direction: column-reverse;
+		}
 	}
 
 	&__desc {
