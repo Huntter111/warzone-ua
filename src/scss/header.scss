@@ -93,11 +93,6 @@
 		padding-bottom: rem(5);
 		position: relative;
 		font-weight: 500;
-		background: linear-gradient(90deg, #bddb06 0%, #08db06 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		text-fill-color: transparent;
 		&::after {
 			content: '';
 			position: absolute;

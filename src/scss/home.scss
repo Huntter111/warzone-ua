@@ -7,7 +7,6 @@
 .main-page {
 	@include adaptiveValue('padding-top', 290, 250, 0, 991, 767);
 	position: relative;
-	// height: 100vh;
 	&__background {
 		position: absolute;
 		z-index: -1;
@@ -22,7 +21,7 @@
 		&::before {
 			position: absolute;
 			content: '';
-			background: url('@img/main/background.png') 0 0 / cover no-repeat;
+			background: url('@img/main/background-1.jpg') 0 0 / cover no-repeat;
 			opacity: 0.1;
 			top: 0;
 			left: 0;
@@ -35,10 +34,8 @@
 	&__container {
 		position: relative;
 	}
-
 	&__headline {
 	}
-
 	&__social-media {
 	}
 	&__decor {
@@ -119,11 +116,6 @@
 		@include adaptiveValue('font-size', 36, 20);
 		line-height: math.div(43, 36);
 		text-transform: uppercase;
-		background: linear-gradient(90deg, #cdec10 0%, #08db06 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		text-fill-color: transparent;
 		opacity: 0.9;
 	}
 
@@ -207,6 +199,9 @@
 		background: rgba(13, 33, 6, 0.3);
 		border-radius: rem(5);
 		border: 0.3px solid #97db06;
+		&:nth-child(2) {
+			padding: rem(13) rem(13) rem(13) rem(13);
+		}
 		img {
 			transition: all 0.5s ease 0s;
 		}
@@ -623,12 +618,18 @@
 		top: 50%;
 		z-index: 5;
 		left: rem(-10) !important;
+		@media (max-width: em(1180)) {
+			left: rem(-5) !important;
+		}
 	}
 
 	&__next {
 		position: absolute;
 		top: 50%;
 		right: rem(-10) !important;
+		@media (max-width: em(1180)) {
+			right: rem(-5) !important;
+		}
 	}
 }
 
@@ -642,10 +643,10 @@
 	@include adaptiveValue('padding-top', 150, 75, 0, 1110, 767);
 	@include adaptiveValue('padding-bottom', 250, 75, 0, 1110, 767);
 	// ! Animation
-	// transform: translate(0px, 20%);
+	transform: translate(0px, 20%);
 	opacity: 0;
 	&._watcher-view {
-		// transform: translate(0px, 0px);
+		transform: translate(0px, 0px);
 		opacity: 1;
 		transition: all 1s ease 0s;
 	}
@@ -709,11 +710,6 @@
 		font-size: rem(16);
 		line-height: math.div(19, 16);
 		text-transform: capitalize;
-		background: linear-gradient(90deg, #bddb06 0%, #08db06 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		text-fill-color: transparent;
 		&::after {
 			transform: translateX(rem(25)) rotate(270deg);
 			position: absolute;
@@ -742,7 +738,7 @@
 		img {
 			max-width: 100%;
 			@media (max-width: $mobile) {
-				width: 50%;
+				width: 45%;
 			}
 			@media (min-width: $mobile) {
 				transform: translateY(rem(-25));
