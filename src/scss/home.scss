@@ -4,6 +4,7 @@
 		min-height: 100vh;
 	}
 }
+
 .main-page {
 	@include adaptiveValue('padding-top', 290, 250, 0, 991, 767);
 	position: relative;

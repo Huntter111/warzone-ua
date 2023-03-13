@@ -47,7 +47,23 @@
 				<section class="page__about-us about-us">
 					<div data-watch data-watch-threshold="0.3" data-watch-once class="about-us__container">
 						<div class="about-us__image-ibg">
-							<img src="@img/about/image-1.jpg" alt="picture: Warzone 2.0" />
+							<!-- <img src="@img/about/image-1.jpg" alt="picture: Warzone 2.0" /> -->
+							<!-- <img
+								class="_lazy-loaded"
+								data-src="@img/about/image-1.jpg"
+								loading="lazy"
+								src="@img/about/image-1.jpg"
+								data-ll-status="loaded"
+								alt="picture: Warzone 2.0"
+							/> -->
+							<img
+								data-src="@img/about/image-1.jpg"
+								alt="picture: Warzone 2.0"
+								loading="lazy"
+								src="@img/about/image-1.jpg"
+								data-ll-status="loaded"
+								class="_lazy-loaded"
+							/>
 						</div>
 						<div class="about-us__body">
 							<h2 class="about-us__title">НАШ дивіз: “Підвищуємо скілл разом”</h2>
@@ -106,7 +122,15 @@
 								участь у розіграшах, турнірах та конкурсах вiд нашого сервера.
 							</p>
 							<div class="advantages__image-ibg">
-								<img src="@img/advantages/image-1.png" alt="picture: warzone 2.0" />
+								<!-- <img src="@img/advantages/image-1.png" alt="picture: warzone 2.0" /> -->
+								<img
+									data-src="@img/advantages/image-1.png"
+									alt="picture: warzone 2.0"
+									loading="lazy"
+									src="@img/advantages/image-1.png"
+									data-ll-status="loaded"
+									class="_lazy-loaded"
+								/>
 							</div>
 						</div>
 					</div>
@@ -121,31 +145,69 @@
 									<!-- Слайд 1-->
 									<div class="highlights__slide swiper-slide highlights-slide">
 										<div class="highlights-slide__image-ibg">
-											<img src="@img/highlights/image-1.jpg" alt="Highlight: Warozone 2.0" />
+											<!-- src="@img/highlights/1x1.png" -->
+											<img
+												src="@img/highlights/1x1.png"
+												srcset="@img/highlights/image-1.jpg"
+												alt="Highlight: Warozone 2.0"
+												loading="lazy"
+											/>
+											<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
 										</div>
 									</div>
 									<!-- Слайд 2-->
 									<div class="highlights__slide swiper-slide highlights-slide">
 										<div class="highlights-slide__image-ibg">
-											<img src="@img/highlights/image-2.jpg" alt="Highlight: Warozone 2.0" />
+											<!-- src="@img/highlights/1x1.png" -->
+											<img
+												src="@img/highlights/1x1.png"
+												srcset="@img/highlights/image-2.jpg"
+												alt="Highlight: Warozone 2.0"
+												loading="lazy"
+											/>
+											<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
 										</div>
 									</div>
 									<!-- Слайд 3-->
 									<div class="highlights__slide swiper-slide highlights-slide">
 										<div class="highlights-slide__image-ibg">
-											<img src="@img/highlights/image-3.jpg" alt="Highlight: Warozone 2.0" />
+											<!-- <img src="@img/highlights/image-3.jpg" alt="Highlight: Warozone 2.0" /> -->
+											<!-- src="@img/highlights/1x1.png" -->
+											<img
+												src="@img/highlights/1x1.png"
+												srcset="@img/highlights/image-3.jpg"
+												alt="Highlight: Warozone 2.0"
+												loading="lazy"
+											/>
+											<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
 										</div>
 									</div>
 									<!-- Слайд 4-->
 									<div class="highlights__slide swiper-slide highlights-slide">
 										<div class="highlights-slide__image-ibg">
-											<img src="@img/highlights/image-4.jpg" alt="Highlight: Warozone 2.0" />
+											<!-- <img src="@img/highlights/image-4.jpg" alt="Highlight: Warozone 2.0" /> -->
+											<!-- src="@img/highlights/1x1.png" -->
+											<img
+												src="@img/highlights/1x1.png"
+												srcset="@img/highlights/image-4.jpg"
+												alt="Highlight: Warozone 2.0"
+												loading="lazy"
+											/>
+											<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
 										</div>
 									</div>
 									<!-- Слайд 5-->
 									<div class="highlights__slide swiper-slide highlights-slide">
 										<div class="highlights-slide__image-ibg">
-											<img src="@img/highlights/image-5.jpg" alt="Highlight: Warozone 2.0" />
+											<!-- <img src="@img/highlights/image-5.jpg" alt="Highlight: Warozone 2.0" /> -->
+											<!-- src="@img/highlights/1x1.png" -->
+											<img
+												src="@img/highlights/1x1.png"
+												srcset="@img/highlights/image-5.jpg"
+												alt="Highlight: Warozone 2.0"
+												loading="lazy"
+											/>
+											<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
 										</div>
 									</div>
 								</div>
@@ -168,6 +230,7 @@
 									frameborder="0"
 									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 									allowfullscreen
+									loading="lazy"
 								></iframe>
 							</div>
 						</div>
@@ -178,7 +241,15 @@
 						<div class="action__wrapper">
 							<div class="action__body">
 								<div class="action__icon">
-									<img src="@img/icons/discord.svg" alt="icon: discord" />
+									<!-- <img src="@img/icons/discord.svg" alt="icon: discord chat" /> -->
+									<img
+										data-src="@img/icons/discord.svg"
+										alt="icon: discord chat"
+										loading="lazy"
+										src="@img/icons/discord.svg"
+										data-ll-status="loaded"
+										class="_lazy-loaded"
+									/>
 								</div>
 								<h2 class="action__title">Чекаємо тебе в нашому дискорд каналі</h2>
 								<a href="https://discord.gg/WuWUrmeYQe" class="action__link main-text" target="_blank"

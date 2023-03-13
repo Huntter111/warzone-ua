@@ -45,9 +45,13 @@ function initSliders() {
 			//touchRatio: 0,
 			//simulateTouch: false,
 			//loop: true,
-			//preloadImages: false,
-			//lazy: true,
-
+			// preloadImages: false,
+			// lazy: {
+			// 	loadOnTransitionStart: false,
+			// 	loadPrevNext: false,
+			// },
+			// watchSlidesProgress: true,
+			// watchSlidesVisability: true,
 			/*
 			// Ефекти
 			effect: 'fade',
