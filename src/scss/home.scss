@@ -29,6 +29,12 @@
 			width: 100vw;
 			z-index: 0;
 		}
+		@media (max-width: $mobile) {
+			&::before {
+				// background: url('@img/main/background-mobile.jpg') 0 0 / cover no-repeat;
+				background: url('@img/main/background-mobile.jpg') 50% / cover no-repeat;
+			}
+		}
 	}
 
 	&__container {
@@ -143,9 +149,6 @@
 			-webkit-animation-delay: 0.3s;
 			animation-delay: 0.5s;
 		}
-		// img {
-		// 	animation: sdb05 1.5s infinite;
-		// }
 		&:not(:last-child) {
 			margin-bottom: rem(10);
 		}
