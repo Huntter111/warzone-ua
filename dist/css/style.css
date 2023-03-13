@@ -2116,6 +2116,7 @@ button.swiper-pagination-bullet {
     z-index: -1;
     top: -2rem;
     left: calc(50% - 198px);
+    opacity: 0.8;
   }
 
   .decor__circle-first {
