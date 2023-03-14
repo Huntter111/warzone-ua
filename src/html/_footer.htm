@@ -1,20 +1,27 @@
 <footer class="footer">
 	<div class="footer__container">
 		<div class="footer__copy">Copyright &#169; 2023 Warzone UA Community</div>
-		<div class="social-media__block-icon footer__media">
+		<div class="social-media__block-icon block-icon footer__media">
 			<a
 				href="https://www.tiktok.com/@ocnovatel_wz?lang=ru-RU&is_from_webapp=1&sender_device=mobile&sender_web_id=7209225452565005830"
 				class="social-media__link"
 				target="_blank"
 			>
-				<img src="@img/icons/tiktok.svg" alt="icon: tiktok" />
+				<!-- <img src="@img/icons/tiktok.svg" alt="icon: tiktok" /> -->
+				<svg class="block-icon__icon">
+					<use xlink:href="@img/icons/icons.svg#tiktok"></use>
+				</svg>
 			</a>
-			<a href="https://discord.gg/cNXjmPyVkx" class="social-media__link" target="_blank"
-				><img src="@img/icons/discord.svg" alt="icon:discord"
-			/></a>
+			<a href="https://discord.gg/cNXjmPyVkx" class="social-media__link" target="_blank">
+				<!-- <img src="@img/icons/discord.svg" alt="icon:discord"> -->
+				<svg>
+					<use xlink:href="@img/icons/icons.svg#discord"></use>
+				</svg>
+			</a>
 			<a href="https://t.me/ocnovatelukrteam" class="social-media__link" target="_blank"
-				><img src="@img/icons/telegram.svg" alt="icon: telegram"
-			/></a>
+				><svg>
+					<use xlink:href="@img/icons/icons.svg#telegram"></use></svg
+			></a>
 		</div>
 	</div>
 </footer>

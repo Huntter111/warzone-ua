@@ -10,6 +10,21 @@
   font-style: normal;
 }
 
+[class*=_icon-]:before {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class*=_icon-]:before {
+  display: block;
+}
+
 * {
   padding: 0px;
   margin: 0px;
@@ -79,8 +94,6 @@ h6 {
 
 body {
   background: #050d02;
-  min-height: 100%;
-  min-height: -webkit-fill-available;
 }
 
 .lock body {
@@ -372,7 +385,6 @@ body {
   left: 0;
   width: 100%;
   opacity: 1;
-  min-height: -webkit-fill-available;
   min-height: 100vh;
   background: #050d02 -o-radial-gradient(21.6% 26.01%, 138.43% 85.75%, rgba(8, 219, 6, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
   background: #050d02 radial-gradient(138.43% 85.75% at 21.6% 26.01%, rgba(8, 219, 6, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
@@ -444,11 +456,10 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 0.625rem;
+  row-gap: 0.3125rem;
 }
 
 .social-media__tile {
-  font-family: "Jura";
   font-weight: 700;
   line-height: 1.1944444444;
   text-transform: uppercase;
@@ -456,31 +467,37 @@ body {
 }
 
 .social-media__arrow {
+  fill: #a0f219;
   text-align: center;
   padding: 0.9375rem 0.9375rem 1.3125rem 0.9375rem;
-  width: 5rem;
-  height: 5rem;
   border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.social-media__arrow img {
-  -webkit-animation: sdb07 2s infinite;
-          animation: sdb07 2s infinite;
+.social-media__arrow svg {
+  width: 1.5625rem;
+  height: 1.5625rem;
+  -webkit-animation: sdb07 2.2s infinite;
+          animation: sdb07 2.2s infinite;
 }
 
-.social-media__arrow img:nth-of-type(1) {
+.social-media__arrow svg:nth-of-type(1) {
   -webkit-animation-delay: 0s;
   animation-delay: 0s;
 }
 
-.social-media__arrow img:nth-of-type(2) {
-  top: 16px;
+.social-media__arrow svg:nth-of-type(2) {
   -webkit-animation-delay: 0.15s;
   animation-delay: 0.15s;
 }
 
-.social-media__arrow img:nth-of-type(3) {
-  top: 32px;
+.social-media__arrow svg:nth-of-type(3) {
   -webkit-animation-delay: 0.3s;
   animation-delay: 0.5s;
 }
@@ -543,13 +560,16 @@ body {
 }
 
 .social-media__link:nth-child(2) {
-  padding: 0.8125rem 0.8125rem 0.8125rem 0.8125rem;
+  padding: 0.6875rem 0.8125rem 0.6875rem 0.8125rem;
 }
 
-.social-media__link img {
+.social-media__link svg {
   -webkit-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
+  fill: #7df51f;
+  width: 1.875rem;
+  height: 1.875rem;
 }
 
 .about-us {
@@ -1000,6 +1020,12 @@ body {
   row-gap: 1.875rem;
 }
 
+.action__icon svg {
+  fill: rgba(124, 245, 31, 0.9);
+  width: 3.375625rem;
+  height: 4.429375rem;
+}
+
 .action__title {
   font-weight: 700;
   line-height: 1.175;
@@ -1029,17 +1055,13 @@ body {
   text-transform: capitalize;
 }
 
-.action__link::after {
-  -webkit-transform: translateX(1.5625rem) rotate(270deg);
-      -ms-transform: translateX(1.5625rem) rotate(270deg);
-          transform: translateX(1.5625rem) rotate(270deg);
-  position: absolute;
-  content: "";
-  top: 5;
-  right: 0;
-  width: 1.5625rem;
-  height: 0.9375rem;
-  background: url("../img/icons/arrow.svg") 0 0 no-repeat;
+.action__link svg {
+  fill: rgba(124, 245, 31, 0.9);
+  width: 1.875rem;
+  height: 1.875rem;
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -1999,9 +2021,9 @@ button.swiper-pagination-bullet {
             transform: translateY(-3.125rem);
   }
 
-  .action__icon img {
-    width: 3.375625rem;
-    height: 4.429375rem;
+  .action__icon svg {
+    width: 6.25rem;
+    height: 6.25rem;
   }
 
   .action__image img {
@@ -3353,16 +3375,16 @@ button.swiper-pagination-bullet {
     width: 100%;
   }
 
-  .social-media__link:hover img {
-    -webkit-transform: scale(1.4);
-        -ms-transform: scale(1.4);
-            transform: scale(1.4);
+  .social-media__link:hover svg {
+    -webkit-transform: scale(1.25);
+        -ms-transform: scale(1.25);
+            transform: scale(1.25);
   }
 
-  .action__link:hover::after {
-    -webkit-transform: translateX(3.125rem) rotate(270deg);
-        -ms-transform: translateX(3.125rem) rotate(270deg);
-            transform: translateX(3.125rem) rotate(270deg);
+  .action__link:hover svg {
+    -webkit-transform: translateX(3.125rem) rotate(-90deg);
+        -ms-transform: translateX(3.125rem) rotate(-90deg);
+            transform: translateX(3.125rem) rotate(-90deg);
   }
 }
 
