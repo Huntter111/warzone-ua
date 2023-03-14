@@ -114,6 +114,12 @@
 			}
 		}
 	}
+	&__button {
+		display: none;
+		@media (max-width: em(370)) {
+			display: inline-flex;
+		}
+	}
 }
 .action-header {
 	// .action-header__icon
@@ -124,6 +130,10 @@
 	}
 	&__button {
 		position: relative;
+		display: none;
+		@media (min-width: em(370)) {
+			display: inline-flex;
+		}
 		// z-index: 10;
 	}
 }
