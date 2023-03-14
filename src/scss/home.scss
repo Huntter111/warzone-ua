@@ -6,7 +6,7 @@
 }
 
 .main-page {
-	@include adaptiveValue('padding-top', 290, 250, 0, 991, 767);
+	@include adaptiveValue('padding-top', 290, 220, 0, 991, 767);
 	position: relative;
 	&__background {
 		position: absolute;
@@ -15,7 +15,6 @@
 		left: 0;
 		width: 100%;
 		opacity: 1;
-		// min-height: -webkit-fill-available;
 		min-height: 100vh;
 		background: #050d02
 			radial-gradient(138.43% 85.75% at 21.6% 26.01%, rgba(8, 219, 6, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
@@ -659,21 +658,24 @@
 	&__wrapper {
 		display: flex;
 		align-items: center;
-
+		padding-right: rem(10);
+		padding-left: rem(10);
 		@include adaptiveValue('column-gap', 65, 40, 0, 1110, 991);
 		background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(8, 219, 6, 0.05) 100%), #101d0b;
 		box-shadow: rem(0) rem(2) rem(5) rem(2) rgba(8, 219, 6, 0.25);
 		border-radius: rem(4);
-		max-height: rem(456);
+		@media (min-width: $mobile) {
+			height: rem(456);
+		}
 		@media (max-width: $mobile) {
 			padding-top: rem(20);
 			flex-direction: column;
 			row-gap: rem(30);
-			max-height: auto;
+			// height: 600px;
 		}
 	}
 	&__body {
-		flex: 1 1 percent(528, $maxWidthContainer);
+		flex: 0 1 percent(528, $maxWidthContainer);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -685,19 +687,19 @@
 
 	&__icon {
 		svg {
+			width: rem(44.01);
+			height: rem(60.87);
 			fill: rgba(124, 245, 31, 0.9);
-			width: rem(54.01);
-			height: rem(70.87);
 			@media (min-width: $mobile) {
-				width: rem(100);
-				height: rem(100);
+				width: rem(90);
+				height: rem(90);
 			}
 		}
 	}
 
 	&__title {
 		font-weight: 700;
-		@include adaptiveValue('font-size', 40, 25, 0, 1110, 991);
+		@include adaptiveValue('font-size', 40, 31, 0, 1110, 991);
 		line-height: math.div(47, 40);
 		text-align: center;
 		text-transform: uppercase;
@@ -745,16 +747,19 @@
 	}
 
 	&__image {
-		text-align: center;
+		@media (max-width: $mobile) {
+			text-align: center;
+		}
 		flex: 1 1 percent(382, $maxWidthContainer);
-		// padding-bottom: 75%;
 		img {
 			max-width: 100%;
 			@media (max-width: $mobile) {
-				width: 45%;
+				width: 60%;
 			}
 			@media (min-width: $mobile) {
-				transform: translateY(rem(-25));
+				transform: translateY(-5%);
+			}
+			@media (max-width: $tablet) {
 			}
 		}
 	}

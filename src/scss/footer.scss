@@ -7,18 +7,40 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		@media (max-width: $mobile) {
+		@media (max-width: $tablet) {
 			flex-direction: column;
 			row-gap: rem(20);
 		}
 	}
 
 	&__copy {
-		@include adaptiveValue('font-size', 18, 16, 0, 991, 767);
+		@include adaptiveValue('font-size', 20, 16, 0, 991, 767);
+		text-align: center;
 		line-height: 1.35;
+		opacity: 0.8;
 	}
 	&__media {
 		@include adaptiveValue('column-gap', 40, 20, 0, 991, 767);
+		@media (max-width: $tablet) {
+			&:not(:last-child) {
+				margin-bottom: rem(20);
+			}
+		}
+	}
+	&__designer {
+		opacity: 1;
+		a {
+			opacity: 0.8;
+			border-bottom: rem(1) solid rgba(255, 255, 255, 0.9);
+			transition: all 0.3s ease 0s;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				a {
+					border-bottom: rem(1) solid transparent;
+				}
+			}
+		}
 	}
 }
 
