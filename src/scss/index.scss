@@ -168,7 +168,7 @@
 	row-gap: rem(5);
 	&__tile {
 		font-weight: 700;
-		@include adaptiveValue('font-size', 36, 20);
+		@include adaptiveValue('font-size', 36, 25);
 		line-height: math.div(43, 36);
 		text-transform: uppercase;
 		opacity: 0.9;

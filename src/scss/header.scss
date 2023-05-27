@@ -1,7 +1,9 @@
 //====================================================================================================
 .header {
-	@include adaptiveValue('padding-top', 30, 15, 0, 767, 500);
-	@include adaptiveValue('padding-bottom', 30, 15, 0, 767, 500);
+	padding-top: rem(20);
+	padding-bottom: rem(20);
+	// @include adaptiveValue('padding-top', 30, 15, 0, 767, 500);
+	// @include adaptiveValue('padding-bottom', 30, 15, 0, 767, 500);
 	position: fixed;
 	width: 100%;
 	top: 0;
@@ -11,9 +13,9 @@
 	&._header-scroll {
 		padding-top: rem(12);
 		padding-bottom: rem(12);
-		background: rgba(21, 32, 18, 0.98);
-		transition: all 0.5s ease 0s;
-		border-bottom: 1px solid #089706;
+		background-color: rgba(21, 32, 18, 0.98);
+		transition: border-bottom 0.5s ease 0s, background-color 0.5s ease 0s, padding-bottom 0.5s ease 0s, padding-top 0.5s ease 0s;
+		border-bottom: rem(1) solid #089706;
 	}
 	&__container {
 		display: flex;
@@ -25,7 +27,8 @@
 		position: relative;
 		z-index: 5;
 		img {
-			@include adaptiveValue('width', 140, 100, 0, 991, 767);
+			// @include adaptiveValue('width', 100, 80, 0, 991, 767);
+			width: rem(100);
 		}
 	}
 	&__menu {
@@ -57,8 +60,9 @@
 				top: 0;
 				right: -100%;
 				background: #0d2106;
-				min-height: rem(100);
+				min-height: rem(75);
 				transition: right 0.3s cubic-bezier(0, 0, 0.2, 1) 0s;
+				border-bottom: rem(1) solid #089706;
 			}
 			.menu-open & {
 				right: 0;
@@ -127,11 +131,12 @@
 	}
 	&__button {
 		position: relative;
-		display: none;
-		@media (min-width: em(370)) {
-			display: inline-flex;
-		}
-		// z-index: 10;
+
+		// display: none;
+		// @media (min-width: em(370)) {
+		// 	display: inline-flex;
+		// }
+		z-index: 10;
 	}
 }
 .icon-menu {
