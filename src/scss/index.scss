@@ -38,6 +38,7 @@
 
 .main-page {
 	@include adaptiveValue('padding-top', 290, 220, 0, 991, 767);
+	// padding-top: rem(100);
 	position: relative;
 	&__background {
 		position: absolute;
@@ -47,8 +48,7 @@
 		width: 100%;
 		opacity: 1;
 		min-height: 100vh;
-		background: #050d02
-			radial-gradient(138.43% 85.75% at 21.6% 26.01%, rgba(8, 219, 6, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+		background: #050d02 radial-gradient(138.43% 85.75% at 21.6% 26.01%, rgba(8, 219, 6, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
 		&::before {
 			position: absolute;
 			content: '';
@@ -59,6 +59,11 @@
 			min-height: 100vh;
 			width: 100vw;
 			z-index: 0;
+			// animation: 50s linear 0s normal none infinite running rot;
+			animation-name: rot; /* Назва анімації */
+			animation-duration: 15s; /* Тривалість анімації */
+			animation-timing-function: ease-in-out; /* Функція затримки анімації */
+			animation-iteration-count: infinite; /* Кількість повторень анімації */
 		}
 		@media (max-width: $mobile) {
 			&::before {
@@ -66,9 +71,23 @@
 			}
 		}
 	}
-
+	@keyframes rot {
+		0% {
+			transform: scale(1); /* Початковий зум */
+		}
+		50% {
+			transform: scale(1.4) translateX(-5%) translateY(10%); /* Середній зум */
+		}
+		100% {
+			transform: scale(1); /* Кінцевий зум */
+		}
+	}
 	&__container {
 		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
 	}
 	&__headline {
 	}
@@ -703,7 +722,7 @@
 	}
 }
 .action {
-	@include adaptiveValue('padding-top', 150, 75, 0, 1110, 767);
+	@include adaptiveValue('padding-top', 100, 30, 0, 1110, 767);
 	@include adaptiveValue('padding-bottom', 250, 75, 0, 1110, 767);
 	// ! Animation
 	transform: translate(0px, 20%);
