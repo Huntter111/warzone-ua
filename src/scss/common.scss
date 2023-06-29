@@ -6,3 +6,19 @@
 	background-clip: text;
 	text-fill-color: transparent;
 }
+.hide-play-btn {
+	display: none;
+}
+
+.btn-play {
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: 10;
+		top: calc(50% - 20px);
+		left: calc(50% - 20px);
+		width: rem(40);
+		height: rem(40);
+		background: url('@img/icons/play-btn.svg') 0 0 no-repeat;
+	}
+}

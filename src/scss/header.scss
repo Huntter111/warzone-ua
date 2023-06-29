@@ -11,8 +11,8 @@
 	right: 0;
 	z-index: 100;
 	&._header-scroll {
-		padding-top: rem(12);
-		padding-bottom: rem(12);
+		padding-top: rem(10);
+		padding-bottom: rem(10);
 		background-color: rgba(21, 32, 18, 0.98);
 		transition: border-bottom 0.5s ease 0s, background-color 0.5s ease 0s, padding-bottom 0.5s ease 0s, padding-top 0.5s ease 0s;
 		border-bottom: rem(1) solid #089706;
@@ -27,8 +27,8 @@
 		position: relative;
 		z-index: 5;
 		img {
-			// @include adaptiveValue('width', 100, 80, 0, 991, 767);
-			width: rem(100);
+			@include adaptiveValue('width', 100, 80, 0, 991, 767);
+			// width: rem(100);
 		}
 	}
 	&__menu {
@@ -60,9 +60,12 @@
 				top: 0;
 				right: -100%;
 				background: #0d2106;
-				min-height: rem(75);
 				transition: right 0.3s cubic-bezier(0, 0, 0.2, 1) 0s;
 				border-bottom: rem(1) solid #089706;
+				min-height: rem(71);
+				@media (max-width: em(369)) {
+					min-height: rem(61);
+				}
 			}
 			.menu-open & {
 				right: 0;
@@ -117,7 +120,7 @@
 	}
 	&__button {
 		display: none;
-		@media (max-width: em(370)) {
+		@media (max-width: em(369)) {
 			display: inline-flex;
 		}
 	}
@@ -131,12 +134,11 @@
 	}
 	&__button {
 		position: relative;
-
-		// display: none;
-		// @media (min-width: em(370)) {
-		// 	display: inline-flex;
-		// }
-		z-index: 10;
+		display: none;
+		@media (min-width: em(370)) {
+			display: inline-flex;
+		}
+		// z-index: 10;
 	}
 }
 .icon-menu {

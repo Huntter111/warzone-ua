@@ -1,35 +1,35 @@
 //====================================================================================================
-.youtube {
-	background-position: center;
-	// background-repeat: no-repeat;
-	background-size: cover;
-	position: relative;
-	display: inline-block;
-	// overflow: hidden;
-	transition: all 200ms ease-out;
-	cursor: pointer;
-	// width: 100%;
-	// height: 300px;
-}
-.youtube .play {
-	background: url('../img/icons/youtube-play-btn.png') no-repeat; /*ВАЖНО: здесь укажите адрес до изображения*/
-	background-position: 0 -50px;
-	-webkit-background-size: 100% auto;
-	background-size: 100% auto;
-	position: absolute;
-	height: 50px;
-	width: 69px;
-	transition: none;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: auto;
-	z-index: 10;
-}
-.youtube:hover .play {
-	background-position: 0 0;
-}
+// .youtube {
+// 	background-position: center;
+// 	// background-repeat: no-repeat;
+// 	background-size: cover;
+// 	position: relative;
+// 	display: inline-block;
+// 	// overflow: hidden;
+// 	transition: all 200ms ease-out;
+// 	cursor: pointer;
+// 	// width: 100%;
+// 	// height: 300px;
+// }
+// .youtube .play {
+// 	background: url('../img/icons/youtube-play-btn.png') no-repeat; /*ВАЖНО: здесь укажите адрес до изображения*/
+// 	background-position: 0 -50px;
+// 	-webkit-background-size: 100% auto;
+// 	background-size: 100% auto;
+// 	position: absolute;
+// 	height: 50px;
+// 	width: 69px;
+// 	transition: none;
+// 	top: 0;
+// 	left: 0;
+// 	right: 0;
+// 	bottom: 0;
+// 	margin: auto;
+// 	z-index: 10;
+// }
+// .youtube:hover .play {
+// 	background-position: 0 0;
+// }
 .page {
 	&__main {
 		min-height: 100vh;
@@ -60,6 +60,7 @@
 			width: 100vw;
 			z-index: 0;
 			// animation: 50s linear 0s normal none infinite running rot;
+			animation-delay: 3s;
 			animation-name: rot; /* Назва анімації */
 			animation-duration: 15s; /* Тривалість анімації */
 			animation-timing-function: ease-in-out; /* Функція затримки анімації */
@@ -76,7 +77,7 @@
 			transform: scale(1); /* Початковий зум */
 		}
 		50% {
-			transform: scale(1.4) translateX(-5%) translateY(10%); /* Середній зум */
+			transform: scale(1.3) translateX(-5%) translateY(10%); /* Середній зум */
 		}
 		100% {
 			transform: scale(1); /* Кінцевий зум */
@@ -151,7 +152,7 @@
 	}
 
 	&__title {
-		font-family: 'Kiln';
+		// font-family: 'Roboto';
 		@include adaptiveValue('font-size', 200, 70, 0, 1140, 400);
 		line-height: math.div(240, 200);
 		color: #bddb06;
@@ -282,6 +283,7 @@
 		@media (min-width: $mobile) {
 			display: flex;
 			align-items: center;
+			justify-content: space-between;
 			@include adaptiveValue('column-gap', 117, 40, 0, 1140, 767);
 		}
 		@media (max-width: $mobile) {
@@ -301,7 +303,7 @@
 
 	&__image-ibg {
 		@media (min-width: $mobile) {
-			flex: 0 0 percent(463, $maxWidthContainer);
+			flex: 0 0 percent(570, $maxWidthContainer);
 			padding-bottom: 40.615%;
 		}
 		// padding-right: 100%;
@@ -560,25 +562,109 @@
 		text-fill-color: transparent;
 		text-align: center;
 		&:not(:last-child) {
-			margin-bottom: rem(40);
+			@include adaptiveValue('margin-bottom', 70, 40, 0, 1110, 767);
+		}
+	}
+}
+
+.highlights {
+	&__body {
+	}
+
+	&__slider {
+	}
+
+	&__wrapper {
+	}
+
+	&__slide {
+	}
+}
+
+// ! VIDEOS
+.highlights-video-swiper {
+	&__buttons {
+		// display: none;
+		// @media (min-width: $mobileSmall) {
+		// 	display: block;
+		// }
+		& > button::after,
+		button::before {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			flex: 0 0 rem(35);
+			width: rem(35);
+			height: rem(35);
+			color: #0d2106;
+			font-size: rem(14);
+			background: linear-gradient(90deg, #cdec10 0%, #08db06 100%);
 		}
 	}
 
-	&__video {
-		width: 100%;
-		height: 600px;
-		border-radius: rem(20);
-		@media (max-width: $tablet) {
-			height: 500px;
-		}
-		@media (max-width: $mobile) {
-			height: 400px;
-		}
-		@media (max-width: $mobileSmall) {
-			height: 220px;
-			border-radius: rem(10);
-		}
+	&__prew {
+		position: absolute;
+		top: 50%;
+		z-index: 5;
+		left: rem(-10) !important;
+		// @media (max-width: em(1180)) {
+		// 	left: rem(5) !important;
+		// }
 	}
+
+	&__next {
+		position: absolute;
+		top: 50%;
+		right: rem(-10) !important;
+		// @media (max-width: em(1180)) {
+		// 	right: rem(-5) !important;
+		// }
+		// z-index: 5;
+	}
+}
+
+.highlights-video-slide {
+	&__video {
+		border-radius: rem(10) !important;
+		@extend %responsiveVideo;
+		@media (any-hover: hover) {
+			&:hover {
+				cursor: pointer;
+			}
+		}
+		// &::after {
+		// 	position: absolute;
+		// 	content: '';
+		// 	top: 0;
+		// 	left: 0;
+		// 	width: 100%;
+		// 	height: 100%;
+		// 	background: linear-gradient(0deg, rgba(8, 219, 6, 0.1), rgba(8, 219, 6, 0.05));
+		// 	z-index: 1;
+		// }
+	}
+
+	&__item {
+	}
+}
+
+.highlights-video {
+	// &__video {
+	// 	width: 100%;
+	// 	height: 600px;
+	// 	border-radius: rem(20);
+	// 	@media (max-width: $tablet) {
+	// 		height: 500px;
+	// 	}
+	// 	@media (max-width: $mobile) {
+	// 		height: 400px;
+	// 	}
+	// 	@media (max-width: $mobileSmall) {
+	// 		height: 220px;
+	// 		border-radius: rem(10);
+	// 	}
+	// }
 	// &__youtube {
 	// 	background-position: center;
 	// 	background-repeat: no-repeat;
@@ -630,7 +716,7 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background: linear-gradient(0deg, rgba(8, 219, 6, 0.1), rgba(8, 219, 6, 0.1));
+			background: linear-gradient(0deg, rgba(8, 219, 6, 0.08), rgba(8, 219, 6, 0.05));
 			z-index: 5;
 		}
 		img {
@@ -658,40 +744,27 @@
 		background: linear-gradient(90deg, #cdec10 0%, #08db06 100%);
 	}
 }
-.swiper-button-next {
-	&::after {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 50%;
-		flex: 0 0 rem(40);
-		width: rem(40);
-		height: rem(40);
-		font-size: rem(22) !important;
-		color: #0d2106;
-		text-align: center;
-		background: linear-gradient(90deg, #cdec10 0%, #08db06 100%);
-	}
-}
+
 .swiper-button-prev {
-	&::after {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 50%;
-		flex: 0 0 rem(40);
-		width: rem(40);
-		height: rem(40);
-		color: #0d2106;
-		font-size: rem(22) !important;
-		background: linear-gradient(90deg, #cdec10 0%, #08db06 100%);
-	}
 }
 .highlights-swiper {
 	&__buttons {
 		display: none;
 		@media (min-width: $mobileSmall) {
 			display: block;
+		}
+		& > button::after,
+		button::before {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			flex: 0 0 rem(40);
+			width: rem(40);
+			height: rem(40);
+			color: #0d2106;
+			font-size: rem(22) !important;
+			background: linear-gradient(90deg, #cdec10 0%, #08db06 100%);
 		}
 	}
 
