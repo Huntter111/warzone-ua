@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<title>Warzone UA - Tournaments</title>
+	<meta charset="UTF-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="description" content="Перша україномовна спільнота WARZONE UA (COD), яка організовує турніри та допомагає підвищити рівень гри кожного учасника." />
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20230704150246" />
+	<link rel="shortcut icon" href="favicon.ico" />
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta property="og:url" content="https://warzone.org.ua" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta property="og:image" content="https:///warzone.org.img/preview.png" />
+	<!-- <meta property="og:image:width" content="200" /> -->
+	<!-- <meta property="og:image:height" content="200" /> -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+	<link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png" />
+	<link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-192x192.png" />
+	<link rel="manifest" href="/favicon/site.webmanifest" />
+	<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#333333" />
+	<meta name="msapplication-TileColor" content="#2b5797" />
+	<meta name="theme-color" content="#333333" />
+</head>
+
+<body>
+	<div class="wrapper">
+		<header data-lp data-scroll="30" class="header header--tournament">
+			<div class="header__container">
+				<a href="index.html" class="header__logo"><img src="img/logo.svg" alt="logo" /></a>
+				<div class="header__menu menu">
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item">
+								<a href="index.html" class="menu__link main-text" target="_blank">Головна</a>
+							</li>
+							<li class="menu__item">
+								<a href="https://warzone.org.ua/index.html#about-us" class="menu__link main-text" target="_blank">Про нас
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="https://warzone.org.ua/index.html#advantages" class="menu__link main-text" target="_blank">Переваги</a>
+							</li>
+							<li class="menu__item">
+								<a href="https://warzone.org.ua/index.html#highlights" class="menu__link main-text" target="_blank">Хайлайти</a>
+							</li>
+							<a href="https://discord.gg/WuWUrmeYQe" class="button menu__button" type="button" target="_blank"><span>Наш Дискорд</span></a>
+						</ul>
+					</nav>
+				</div>
+				<div class="action-header">
+					<a href="https://discord.gg/WuWUrmeYQe" class="button action-header__button" type="button" target="_blank"><span>Наш Дискорд</span></a>
+					<button type="button" class="action-header__icon icon-menu" aria-label="button burger"><span></span></button>
+				</div>
+			</div>
+		</header>
+
+		<main class="tournament">
+			<section class="tournament-register register-tournament">
+				<div class="register-tournament__container">
+					<!-- data-dev -->
+					<form action="files/sendtotelegram.php" class="form-register form" method="POST">
+						<h1 class="form-register__title">Реєстрація на турнір 08.07.2023&nbsp;-&nbsp;Кастомне&nbsp;лобі</h1>
+						<div class="form-register__columns">
+							<div class="form-register__column">
+								<div class="form-control form-register__line">
+									<input name="name_team" type="text" required class="input" />
+									<label>Назва команди</label>
+
+									<!-- <label>
+                           <span style="transition-delay: 0ms">E</span>
+                           <span style="transition-delay: 50ms">m</span>
+                           <span style="transition-delay: 100ms">a</span>
+                           <span style="transition-delay: 150ms">i</span>
+                           <span style="transition-delay: 200ms">l</span>
+                        </label> -->
+								</div>
+								<div class="form-control form-register__line">
+									<input name="name_captain" type="text" required class="input" />
+									<label>Hікнейм Капітана</label>
+								</div>
+								<div class="form-control form-register__line">
+									<input name="name_two" type="text" required class="input" />
+									<label>Hікнейм другого гравця</label>
+								</div>
+								<div class="form-control form-register__line">
+									<input name="name_three" type="text" required class="input" />
+									<label>Hікнейм третього гравця </label>
+								</div>
+								<div class="form-control form-register__line">
+									<input name="name_four" type="text" required class="input" />
+									<label>Hікнейм четвертого гравця </label>
+								</div>
+							</div>
+							<div class="form-register__column">
+								<div class="form-control form-register__line">
+									<input id="mask" name="phone_captain" type="text" required class="input" />
+									<label>Телефон капітана команди</label>
+								</div>
+								<div class="form-control form-register__line">
+									<input data-validate data-error="Невірний Activision ID" data-required="hash" name="id_captain" type="text" required class="input" />
+									<label>Activision ID Капітана </label>
+								</div>
+								<div class="form-control form-register__line">
+									<input data-validate data-error="Невірний Activision ID" data-required="hash" name="id_two" name="idThree" type="text" required class="input" />
+									<label>Activision ID другого гравця</label>
+								</div>
+								<div class="form-control form-register__line">
+									<input data-validate data-error="Невірний Activision ID" data-required="hash" name="id_three" type="text" required class="input" />
+									<label>Activision ID третього гравця</label>
+								</div>
+								<div class="form-control form-register__line">
+									<input data-validate data-error="Невірний Activision ID" data-required="hash" name="id_four" type="text" required class="input" />
+									<label>Activision ID четвертого гравця</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-register__textarea">
+							<label>Побажання, запитання, відгук (*необов’язково)</label>
+
+							<textarea id="myTextarea" type="text" autocomplete="off" name="message" placeholder="Текст" data-error="Помилка" class="input"></textarea>
+						</div>
+						<button type="submit" class="form-register__button"><span class="main-text">Відправити</span></button>
+						<a data-popup="#thank-you" href="#"></a>
+						<a data-popup="#thank-you-error" href="#"></a>
+					</form>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__copy">Copyright &#169; 2023 Warzone UA Community</div>
+				<div class="social-media__block-icon block-icon footer__media">
+					<a href="https://www.tiktok.com/@hunter_god_?lang=uk-UA" class="social-media__link" target="_blank" name="social icon tiktok" aria-label="social link tiktok">
+						<svg class="block-icon__icon">
+							<use xlink:href="img/icons/icons.svg#tiktok"></use>
+						</svg>
+					</a>
+					<a href="https://discord.gg/cNXjmPyVkx" class="social-media__link" target="_blank" name="social icon discord" aria-label="social link discord chat">
+						<svg>
+							<use xlink:href="img/icons/icons.svg#discord"></use>
+						</svg>
+					</a>
+					<a href="https://t.me/WZukrchat" class="social-media__link" target="_blank" name="social icon telegram" aria-label="social link telegram chat"><svg>
+							<use xlink:href="img/icons/icons.svg#telegram"></use>
+						</svg></a>
+				</div>
+				<div class="footer__designer">Design by <a href="https://t.me/HUNTER_SV" target="_blank">Hunter_SV</a></div>
+			</div>
+		</footer>
+
+	</div>
+	<div id="thank-you" aria-hidden="true" class="popup popup-send">
+		<div class="popup__wrapper popup-send__wrapper">
+			<div class="popup__content popup-send__content">
+				<button data-close type="button " class="popup__close popup-send__close">
+					<img src="img/icons/close.svg" alt="picture close" />
+				</button>
+				<div class="popup-send__body">
+					<div class="popup__text popup-send__text">
+						Реєстрація успішна! Слідкуйте за новинами в <a href="https://t.me/WZukrchat" target="_blank">чаті телеграму</a>
+					</div>
+					<a href="https://t.me/WZukrchat/17133/26217" class="popup__text popup-send__link" target="_blank">
+						Ознайомитись з правилами <img src="img/icons/arrow-popup.svg" alt="arrow up" />
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="thank-you-error" aria-hidden="true" class="popup popup-send">
+		<div class="popup__wrapper popup-send__wrapper">
+			<div class="popup__content popup-send__content popup-send__content--error">
+				<button data-close type="button " class="popup__close popup-send__close">
+					<img src="img/icons/close.svg" alt="picture close" />
+				</button>
+				<div class="popup-send__body popup-send__body--error">
+					<div class="popup__text popup-send__text">
+						Сталася помилка при відправленні форми, cпробуйте ще раз, або зверніться до
+						<a href="https://t.me/HUNTER_SV" target="_blank">модератора</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20230704150246"></script>
+</body>
+
+</html>
