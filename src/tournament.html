@@ -7,6 +7,7 @@
 			<main class="tournament">
 				<section class="tournament-register register-tournament">
 					<div class="register-tournament__container">
+						<!-- data-dev -->
 						<form action="files/sendtotelegram.php" class="form-register form" method="POST">
 							<h1 class="form-register__title">Реєстрація на турнір 08.07.2023&nbsp;-&nbsp;Кастомне&nbsp;лобі</h1>
 							<div class="form-register__columns">
@@ -46,33 +47,65 @@
 										<label>Телефон капітана команди</label>
 									</div>
 									<div class="form-control form-register__line">
-										<input name="id_captain" type="text" required class="input" />
+										<input
+											data-validate
+											data-error="Невірний Activision ID"
+											data-required="hash"
+											name="id_captain"
+											type="text"
+											required
+											class="input"
+										/>
 										<label>Activision ID Капітана </label>
 									</div>
 									<div class="form-control form-register__line">
-										<input name="id_two" name="idThree" type="text" required class="input" />
+										<input
+											data-validate
+											data-error="Невірний Activision ID"
+											data-required="hash"
+											name="id_two"
+											name="idThree"
+											type="text"
+											required
+											class="input"
+										/>
 										<label>Activision ID другого гравця</label>
 									</div>
 									<div class="form-control form-register__line">
-										<input name="id_three" type="text" required class="input" />
+										<input
+											data-validate
+											data-error="Невірний Activision ID"
+											data-required="hash"
+											name="id_three"
+											type="text"
+											required
+											class="input"
+										/>
 										<label>Activision ID третього гравця</label>
 									</div>
 									<div class="form-control form-register__line">
-										<input name="id_four" type="text" required class="input" />
+										<input
+											data-validate
+											data-error="Невірний Activision ID"
+											data-required="hash"
+											name="id_four"
+											type="text"
+											required
+											class="input"
+										/>
 										<label>Activision ID четвертого гравця</label>
 									</div>
 								</div>
 							</div>
 							<div class="form-register__textarea">
-								<!-- <input type="phone" required class="input" /> -->
 								<label>Побажання, запитання, відгук (*необов’язково)</label>
-								<!-- <div id="wordCount"></div> -->
+
 								<textarea
 									id="myTextarea"
 									type="text"
 									autocomplete="off"
 									name="message"
-									placeholder="Text"
+									placeholder="Текст"
 									data-error="Помилка"
 									class="input"
 								></textarea>

@@ -27,12 +27,7 @@ function formInput() {
 	});
 }
 formInput();
-// function showMaskInForm() {
-// 	var phoneMask = IMask(document.getElementById('mask'), {
-// 		mask: '+{38}(000)000-00-00',
-// 	});
-// }
-// showMaskInForm();
+
 if (document.title === 'Warzone UA - Tournaments') {
 	// Ваш код тут
 	function showMaskInForm() {

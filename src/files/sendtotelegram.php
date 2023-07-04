@@ -156,10 +156,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	curl_close($ch);
 
 	if ($response) {
-		header("Location: https://warzone.org.ua/dist/tournament.html#thank-you");
+		header("Location: https://warzone.org.ua/tournament.html#thank-you");
 		exit();
 	} else {
-		header("Location: https://warzone.org.ua/dist/tournament.html#thank-you-error");
+		header("Location: https://warzone.org.ua/tournament.html#thank-you-error");
 		// echo "Error";
 	}
 }
