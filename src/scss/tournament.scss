@@ -1,0 +1,170 @@
+.tournament-register {
+	// min-height: 900px;
+	background: url('@img/tournaments/background.png') 1% 0 / cover no-repeat;
+	// background: linear-gradient(99deg, rgba(0, 0, 0, 0.4) 13.02%, rgba(0, 0, 0, 0) 100%),
+	// 	url('@img/tournaments/background.png') 0 0 / cover no-repeat;
+	// &::before {
+	// 	content: '';
+	// 	position: absolute;
+	// 	z-index: 0;
+	// 	top: 0;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	min-height: 100vh;
+	// 	background: #050d024f radial-gradient(138.43% 85.75% at 21.6% 26.01%, rgba(9, 219, 6, 0.1) 0%, rgba(0, 0, 0, 0.397) 100%);
+	// }
+	padding-top: rem(100);
+	@include adaptiveValue('padding-bottom', 70, 50);
+	&__container {
+	}
+}
+
+.form-control {
+	font-family: 'Jura';
+	position: relative;
+	// margin: rem(10) 0 rem(50);
+	&:not(:last-child) {
+		margin: rem(10) 0 rem(40);
+	}
+	@include adaptiveValue('font-size', 20, 16);
+}
+
+.form-control input {
+	background-color: transparent;
+	border: 0;
+	border-bottom: rem(2) #fff solid;
+	display: block;
+	width: 100%;
+	padding: rem(10) rem(5) rem(10) rem(5);
+	color: rgb(0, 0, 0);
+}
+
+.form-control input:focus,
+.form-control input:valid {
+	// background: #fff;
+	outline: 0;
+	transition: all 0.5s;
+	color: #fff;
+	font-weight: 600;
+	background-color: #a5a5a52a;
+}
+
+.form-control label {
+	position: absolute;
+	top: rem(10);
+	left: rem(5);
+	pointer-events: none;
+}
+
+.form-control label span,
+.form-control label span {
+	display: inline-block;
+
+	font-weight: 600;
+	line-height: normal;
+	min-width: 5px;
+	transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+	background: linear-gradient(90deg, #bddb06 0%, #08db06 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: #00ff08de;
+	background-clip: text;
+	transform: translateY(rem(-40));
+	font-weight: 600;
+}
+
+.tournament-register {
+}
+.register-tournament {
+	&__container {
+	}
+}
+
+.form-register {
+	display: flex;
+	flex-direction: column;
+	row-gap: rem(40);
+	&__columns {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: rem(25);
+		row-gap: rem(30);
+		@media (max-width: $mobile) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+	&__column {
+		display: flex;
+		flex-direction: column;
+	}
+	&__title {
+		color: #fff;
+		@include adaptiveValue('font-size', 40, 24);
+		font-family: 'Jura';
+		font-weight: 700;
+		line-height: 1.5;
+		text-transform: uppercase;
+		&:not(:last-child) {
+			margin-bottom: rem(35);
+		}
+		@media (max-width: $tablet) {
+			text-align: center;
+		}
+	}
+	&__textarea {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(10);
+		// @include adaptiveValue('font-size', 20, 16);
+		line-height: math.div(34, 20);
+		label {
+			background: linear-gradient(90deg, #bddb06 0%, #08db06 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: #00ff08de;
+			background-clip: text;
+		}
+		textarea {
+			outline: none;
+			padding: rem(10) rem(5);
+			border-bottom: rem(2) #fff solid;
+			height: rem(100);
+			font-weight: 600;
+		}
+	}
+	&__button {
+		justify-content: center;
+		padding: rem(15) rem(20);
+		// background-color: #44db06;
+		border: rem(2) solid #44db06;
+		background: #050d02;
+		transition: all 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				box-shadow: rem(4) rem(4) rem(15) rgba(9, 219, 6, 0.788);
+				background: rgba(12, 34, 4, 0.7);
+			}
+		}
+		span {
+			@include adaptiveValue('font-size', 28, 24);
+			font-family: 'Jura';
+			font-weight: 600;
+			text-transform: capitalize;
+			opacity: 0.8999999761581421;
+		}
+		&:active {
+			transform: scale(0.97);
+		}
+	}
+}
+.column-register {
+	&__column {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__second {
+	}
+}

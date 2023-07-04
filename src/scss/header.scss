@@ -1,7 +1,7 @@
 //====================================================================================================
 .header {
-	padding-top: rem(20);
-	padding-bottom: rem(20);
+	padding-top: rem(10);
+	padding-bottom: rem(10);
 	// @include adaptiveValue('padding-top', 30, 15, 0, 767, 500);
 	// @include adaptiveValue('padding-bottom', 30, 15, 0, 767, 500);
 	position: fixed;
@@ -14,7 +14,13 @@
 		padding-top: rem(10);
 		padding-bottom: rem(10);
 		background-color: rgba(21, 32, 18, 0.98);
-		transition: border-bottom 0.5s ease 0s, background-color 0.5s ease 0s, padding-bottom 0.5s ease 0s, padding-top 0.5s ease 0s;
+		transition: border-bottom 0.3s ease 0s, background-color 0.3s ease 0s, padding-bottom 0.3s ease 0s, padding-top 0.3s ease 0s;
+		border-bottom: rem(1) solid #089706;
+	}
+	&--tournament {
+		padding-top: rem(10);
+		padding-bottom: rem(10);
+		background-color: rgba(21, 32, 18, 0.98);
 		border-bottom: rem(1) solid #089706;
 	}
 	&__container {
@@ -29,6 +35,9 @@
 		img {
 			@include adaptiveValue('width', 100, 80, 0, 991, 767);
 			// width: rem(100);
+			@media (max-width: $mobileSmall) {
+				width: rem(70);
+			}
 		}
 	}
 	&__menu {
@@ -62,9 +71,12 @@
 				background: #0d2106;
 				transition: right 0.3s cubic-bezier(0, 0, 0.2, 1) 0s;
 				border-bottom: rem(1) solid #089706;
-				min-height: rem(71);
+				min-height: rem(69);
+				@media (max-width: em(461)) {
+					min-height: rem(64);
+				}
 				@media (max-width: em(369)) {
-					min-height: rem(61);
+					min-height: rem(56);
 				}
 			}
 			.menu-open & {
@@ -77,9 +89,11 @@
 	}
 	// .menu__list
 	&__list {
-		font-size: rem(20);
+		@include adaptiveValue('font-size', 20, 16, 0, 991, 768);
 		line-height: math.div(24, 20);
 		display: flex;
+		flex-wrap: wrap;
+		row-gap: rem(10);
 		@include adaptiveValue('column-gap', 30, 20, 0, 991, 767);
 		@media (max-width: $mobile) {
 			padding-top: rem(120);
@@ -134,9 +148,17 @@
 	}
 	&__button {
 		position: relative;
+		z-index: 10;
 		display: none;
+		flex-shrink: 0;
 		@media (min-width: em(370)) {
 			display: inline-flex;
+		}
+		span {
+			padding: rem(12) rem(8) rem(12) rem(8);
+			@media (max-width: em(460)) {
+				font-size: rem(16);
+			}
 		}
 		// z-index: 10;
 	}
@@ -155,7 +177,7 @@
 	@media (max-width: $mobile) {
 		display: block;
 		position: relative;
-		@include adaptiveValue('width', 50, 40, 0, 400, 350);
+		@include adaptiveValue('width', 50, 35, 0, 400, 350);
 		@include adaptiveValue('height', 35, 25, 0, 400, 350);
 		// width: rem(50);
 		// height: rem(35);
