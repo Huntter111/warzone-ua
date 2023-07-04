@@ -26,6 +26,7 @@ textarea {
 	&._form-error {
 		border-bottom: rem(2) solid rgb(255, 0, 0);
 		background-color: rgba(255, 0, 0, 0.2);
+		margin-bottom: rem(0);
 	}
 	&:focus,
 	&:valid {
@@ -48,6 +49,7 @@ textarea {
 			}
 		}
 	}
+	margin-bottom: rem(19);
 }
 .input[placeholder]:not([data-placeholder-nohiden]) {
 	&::placeholder {
