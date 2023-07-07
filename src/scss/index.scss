@@ -522,17 +522,18 @@
 	}
 }
 .highlights {
+	background: #050d02;
 	@include adaptiveValue('padding-top', 75, 50, 0, 991, 767);
 	@include adaptiveValue('padding-bottom', 75, 50, 0, 991, 767);
-	// ! Animation
-	transform: translate(0px, 20%);
-	opacity: 0;
-	&._watcher-view {
-		transform: translate(0px, 0px);
-		opacity: 1;
-		transition: all 0.8s ease 0s;
-	}
 	&__container {
+		// ! Animation
+		transform: translate(0px, 20%);
+		opacity: 0;
+		&._watcher-view {
+			transform: translate(0px, 0px);
+			opacity: 1;
+			transition: all 0.8s ease 0s;
+		}
 	}
 
 	&__slider {
@@ -795,17 +796,18 @@
 	}
 }
 .action {
+	background: #050d02;
 	@include adaptiveValue('padding-top', 100, 30, 0, 1110, 767);
 	@include adaptiveValue('padding-bottom', 250, 75, 0, 1110, 767);
-	// ! Animation
-	transform: translate(0px, 20%);
-	opacity: 0;
-	&._watcher-view {
-		transform: translate(0px, 0px);
-		opacity: 1;
-		transition: all 1s ease 0s;
-	}
 	&__container {
+		// ! Animation
+		transform: translate(0px, 20%);
+		opacity: 0;
+		&._watcher-view {
+			transform: translate(0px, 0px);
+			opacity: 1;
+			transition: all 1s ease 0s;
+		}
 	}
 	&__wrapper {
 		display: flex;

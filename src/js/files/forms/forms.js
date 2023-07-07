@@ -163,7 +163,7 @@ export let formValidate = {
 		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(formRequiredItem.value);
 	},
 	containsHash(value) {
-		return /^\w*#[0-9]+$/.test(value);
+		return /^\s*[\wа-яА-ЯёЁїЇіІєЄ]+(?:\s+[\wа-яА-ЯёЁїЇіІєЄ]+)*\s*#\s*[0-9]+$/.test(value);
 	},
 };
 
