@@ -1,10 +1,10 @@
 // Підключення функціоналу "Чертоги Фрілансера"
 // Підключення списку активних модулів
-import { flsModules } from "../modules.js";
+import {flsModules} from '../modules.js';
 // Допоміжні функції
-import { isMobile, _slideUp, _slideDown, _slideToggle, FLS } from "../functions.js";
+import {isMobile, _slideUp, _slideDown, _slideToggle, FLS} from '../functions.js';
 // Модуль прокручування до блоку
-import { gotoBlock } from "../scroll/gotoblock.js";
+import {gotoBlock} from '../scroll/gotoblock.js';
 //================================================================================================================================================================================================================================================================================================================================
 
 /*
@@ -12,10 +12,10 @@ import { gotoBlock } from "../scroll/gotoblock.js";
 */
 
 // Робота із полями форми.
-export function formFieldsInit(options = { viewPass: false, autoHeight: false }) {
-	document.body.addEventListener("focusin", function (e) {
+export function formFieldsInit(options = {viewPass: false, autoHeight: false}) {
+	document.body.addEventListener('focusin', function (e) {
 		const targetElement = e.target;
-		if ((targetElement.tagName === 'INPUT' || targetElement.tagName === 'TEXTAREA')) {
+		if (targetElement.tagName === 'INPUT' || targetElement.tagName === 'TEXTAREA') {
 			if (!targetElement.hasAttribute('data-no-focus-classes')) {
 				targetElement.classList.add('_form-focus');
 				targetElement.parentElement.classList.add('_form-focus');
@@ -23,9 +23,9 @@ export function formFieldsInit(options = { viewPass: false, autoHeight: false })
 			targetElement.hasAttribute('data-validate') ? formValidate.removeError(targetElement) : null;
 		}
 	});
-	document.body.addEventListener("focusout", function (e) {
+	document.body.addEventListener('focusout', function (e) {
 		const targetElement = e.target;
-		if ((targetElement.tagName === 'INPUT' || targetElement.tagName === 'TEXTAREA')) {
+		if (targetElement.tagName === 'INPUT' || targetElement.tagName === 'TEXTAREA') {
 			if (!targetElement.hasAttribute('data-no-focus-classes')) {
 				targetElement.classList.remove('_form-focus');
 				targetElement.parentElement.classList.remove('_form-focus');
@@ -36,11 +36,11 @@ export function formFieldsInit(options = { viewPass: false, autoHeight: false })
 	});
 	// Якщо увімкнено, додаємо функціонал "Показати пароль"
 	if (options.viewPass) {
-		document.addEventListener("click", function (e) {
+		document.addEventListener('click', function (e) {
 			let targetElement = e.target;
 			if (targetElement.closest('[class*="__viewpass"]')) {
-				let inputType = targetElement.classList.contains('_viewpass-active') ? "password" : "text";
-				targetElement.parentElement.querySelector('input').setAttribute("type", inputType);
+				let inputType = targetElement.classList.contains('_viewpass-active') ? 'password' : 'text';
+				targetElement.parentElement.querySelector('input').setAttribute('type', inputType);
 				targetElement.classList.toggle('_viewpass-active');
 			}
 		});
@@ -49,12 +49,12 @@ export function formFieldsInit(options = { viewPass: false, autoHeight: false })
 	if (options.autoHeight) {
 		const textareas = document.querySelectorAll('textarea[data-autoheight]');
 		if (textareas.length) {
-			textareas.forEach(textarea => {
-				const startHeight = textarea.hasAttribute('data-autoheight-min') ?
-					Number(textarea.dataset.autoheightMin) : Number(textarea.offsetHeight);
-				const maxHeight = textarea.hasAttribute('data-autoheight-max') ?
-					Number(textarea.dataset.autoheightMax) : Infinity;
-				setHeight(textarea, Math.min(startHeight, maxHeight))
+			textareas.forEach((textarea) => {
+				const startHeight = textarea.hasAttribute('data-autoheight-min')
+					? Number(textarea.dataset.autoheightMin)
+					: Number(textarea.offsetHeight);
+				const maxHeight = textarea.hasAttribute('data-autoheight-max') ? Number(textarea.dataset.autoheightMax) : Infinity;
+				setHeight(textarea, Math.min(startHeight, maxHeight));
 				textarea.addEventListener('input', () => {
 					if (textarea.scrollHeight > startHeight) {
 						textarea.style.height = `auto`;
@@ -74,8 +74,8 @@ export let formValidate = {
 		let error = 0;
 		let formRequiredItems = form.querySelectorAll('*[data-required]');
 		if (formRequiredItems.length) {
-			formRequiredItems.forEach(formRequiredItem => {
-				if ((formRequiredItem.offsetParent !== null || formRequiredItem.tagName === "SELECT") && !formRequiredItem.disabled) {
+			formRequiredItems.forEach((formRequiredItem) => {
+				if ((formRequiredItem.offsetParent !== null || formRequiredItem.tagName === 'SELECT') && !formRequiredItem.disabled) {
 					error += this.validateInput(formRequiredItem);
 				}
 			});
@@ -84,17 +84,24 @@ export let formValidate = {
 	},
 	validateInput(formRequiredItem) {
 		let error = 0;
-		if (formRequiredItem.dataset.required === "email") {
-			formRequiredItem.value = formRequiredItem.value.replace(" ", "");
+		if (formRequiredItem.dataset.required === 'email') {
+			formRequiredItem.value = formRequiredItem.value.replace(' ', '');
 			if (this.emailTest(formRequiredItem)) {
 				this.addError(formRequiredItem);
 				error++;
 			} else {
 				this.removeError(formRequiredItem);
 			}
-		} else if (formRequiredItem.type === "checkbox" && !formRequiredItem.checked) {
+		} else if (formRequiredItem.type === 'checkbox' && !formRequiredItem.checked) {
 			this.addError(formRequiredItem);
 			error++;
+		} else if (formRequiredItem.dataset.required === 'hash') {
+			if (!this.containsHash(formRequiredItem.value)) {
+				this.addError(formRequiredItem);
+				error++;
+			} else {
+				this.removeError(formRequiredItem);
+			}
 		} else {
 			if (!formRequiredItem.value.trim()) {
 				this.addError(formRequiredItem);
@@ -111,7 +118,10 @@ export let formValidate = {
 		let inputError = formRequiredItem.parentElement.querySelector('.form__error');
 		if (inputError) formRequiredItem.parentElement.removeChild(inputError);
 		if (formRequiredItem.dataset.error) {
-			formRequiredItem.parentElement.insertAdjacentHTML('beforeend', `<div class="form__error">${formRequiredItem.dataset.error}</div>`);
+			formRequiredItem.parentElement.insertAdjacentHTML(
+				'beforeend',
+				`<div class="form__error">${formRequiredItem.dataset.error}</div>`,
+			);
 		}
 	},
 	removeError(formRequiredItem) {
@@ -151,8 +161,12 @@ export let formValidate = {
 	},
 	emailTest(formRequiredItem) {
 		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(formRequiredItem.value);
-	}
-}
+	},
+	containsHash(value) {
+		return /^\s*[\wа-яА-ЯёЁїЇіІєЄ]+(?:\s+[\wа-яА-ЯёЁїЇіІєЄ]+)*\s*#\s*[0-9]+$/.test(value);
+	},
+};
+
 /* Відправлення форм */
 export function formSubmit() {
 	const forms = document.forms;
@@ -172,7 +186,8 @@ export function formSubmit() {
 		const error = !form.hasAttribute('data-no-validate') ? formValidate.getErrors(form) : 0;
 		if (error === 0) {
 			const ajax = form.hasAttribute('data-ajax');
-			if (ajax) { // Якщо режим ajax
+			if (ajax) {
+				// Якщо режим ajax
 				e.preventDefault();
 				const formAction = form.getAttribute('action') ? form.getAttribute('action').trim() : '#';
 				const formMethod = form.getAttribute('method') ? form.getAttribute('method').trim() : 'GET';
@@ -181,17 +196,18 @@ export function formSubmit() {
 				form.classList.add('_sending');
 				const response = await fetch(formAction, {
 					method: formMethod,
-					body: formData
+					body: formData,
 				});
 				if (response.ok) {
 					let responseResult = await response.json();
 					form.classList.remove('_sending');
 					formSent(form, responseResult);
 				} else {
-					alert("Помилка");
+					alert('Помилка');
 					form.classList.remove('_sending');
 				}
-			} else if (form.hasAttribute('data-dev')) {	// Якщо режим розробки
+			} else if (form.hasAttribute('data-dev')) {
+				// Якщо режим розробки
 				e.preventDefault();
 				formSent(form);
 			}
@@ -206,12 +222,14 @@ export function formSubmit() {
 	// Дії після надсилання форми
 	function formSent(form, responseResult = ``) {
 		// Створюємо подію відправлення форми
-		document.dispatchEvent(new CustomEvent("formSent", {
-			detail: {
-				form: form
-			}
-		}));
-		// Показуємо попап, якщо підключено модуль попапів 
+		document.dispatchEvent(
+			new CustomEvent('formSent', {
+				detail: {
+					form: form,
+				},
+			}),
+		);
+		// Показуємо попап, якщо підключено модуль попапів
 		// та для форми вказано налаштування
 		setTimeout(() => {
 			if (flsModules.popup) {
@@ -230,7 +248,7 @@ export function formSubmit() {
 }
 /* Модуль форми "кількість" */
 export function formQuantity() {
-	document.addEventListener("click", function (e) {
+	document.addEventListener('click', function (e) {
 		let targetElement = e.target;
 		if (targetElement.closest('[data-quantity-plus]') || targetElement.closest('[data-quantity-minus]')) {
 			const valueElement = targetElement.closest('[data-quantity]').querySelector('[data-quantity-value]');
@@ -293,17 +311,17 @@ export function formRating() {
 			const ratingItems = rating.querySelectorAll('.rating__item');
 			for (let index = 0; index < ratingItems.length; index++) {
 				const ratingItem = ratingItems[index];
-				ratingItem.addEventListener("mouseenter", function (e) {
+				ratingItem.addEventListener('mouseenter', function (e) {
 					// Оновлення змінних
 					initRatingVars(rating);
 					// Оновлення активних зірок
 					setRatingActiveWidth(ratingItem.value);
 				});
-				ratingItem.addEventListener("mouseleave", function (e) {
+				ratingItem.addEventListener('mouseleave', function (e) {
 					// Оновлення активних зірок
 					setRatingActiveWidth();
 				});
-				ratingItem.addEventListener("click", function (e) {
+				ratingItem.addEventListener('click', function (e) {
 					// Оновлення змінних
 					initRatingVars(rating);
 
@@ -332,7 +350,6 @@ export function formRating() {
 					//headers: {
 					//	'content-type': 'application/json'
 					//}
-
 				});
 				if (response.ok) {
 					const result = await response.json();
@@ -348,7 +365,7 @@ export function formRating() {
 
 					rating.classList.remove('rating_sending');
 				} else {
-					alert("Помилка");
+					alert('Помилка');
 
 					rating.classList.remove('rating_sending');
 				}

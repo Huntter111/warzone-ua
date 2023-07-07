@@ -27,10 +27,10 @@ import '../../scss/libs/swiper.scss';
 function initSliders() {
 	// Список слайдерів
 	// Перевіряємо, чи є слайдер на сторінці
-	if (document.querySelector('.swiper')) {
+	if (document.querySelector('.highlights-swiper')) {
 		// Вказуємо склас потрібного слайдера
 		// Створюємо слайдер
-		new Swiper('.swiper', {
+		new Swiper('.highlights-swiper', {
 			// Вказуємо склас потрібного слайдера
 			// Підключаємо модулі слайдера
 			// для конкретного випадку
@@ -64,7 +64,7 @@ function initSliders() {
 			// Пагінація
 
 			pagination: {
-				el: '.swiper-pagination',
+				el: '.highlights-swiper-pagination',
 				clickable: true,
 				dynamicBullets: true,
 				dynamicMainBullets: 1,
@@ -95,7 +95,81 @@ function initSliders() {
 			on: {},
 		});
 	}
+	if (document.querySelector('.highlights-video-swiper')) {
+		// Вказуємо склас потрібного слайдера
+		// Створюємо слайдер
+		new Swiper('.highlights-video-swiper', {
+			// Вказуємо склас потрібного слайдера
+			// Підключаємо модулі слайдера
+			// для конкретного випадку
+			modules: [Navigation, Pagination],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 0,
+			autoHeight: true,
+			speed: 800,
+
+			//touchRatio: 0,
+			//simulateTouch: false,
+			//loop: true,
+			// preloadImages: false,
+			// lazy: {
+			// 	loadOnTransitionStart: false,
+			// 	loadPrevNext: false,
+			// },
+			// watchSlidesProgress: true,
+			// watchSlidesVisability: true,
+			/*
+			// Ефекти
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			*/
+
+			// Пагінація
+
+			pagination: {
+				el: '.highlights-video__swiper-pagination',
+				clickable: true,
+				dynamicBullets: true,
+				dynamicMainBullets: 1,
+			},
+			// слайд з якого починається
+			initialSlide: 0,
+			// Скроллбар
+
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+
+			// Кнопки "вліво/вправо"
+			navigation: {
+				prevEl: '.highlights-video-swiper__prew',
+				nextEl: '.highlights-video-swiper__next',
+			},
+
+			// Брейкпоінти
+			breakpoints: {
+				767: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+			},
+
+			// Події
+			on: {},
+		});
+	}
 }
+
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 function initSlidersScroll() {
 	let sliderScrollItems = document.querySelectorAll('.swiper_scroll');

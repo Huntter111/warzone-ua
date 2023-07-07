@@ -80,3 +80,6 @@
 	box-shadow: 2px 2px 10px rgba(8, 219, 6, 0.4);
 	transition: all 0.3s ease 0s;
 }
+.button:active {
+	transform: scale(0.97);
+}

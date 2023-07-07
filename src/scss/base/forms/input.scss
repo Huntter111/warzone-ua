@@ -1,8 +1,8 @@
 //<INPUT>
 // Сніппет (HTML): inp
-input[type="text"],
-input[type="email"],
-input[type="tel"],
+input[type='text'],
+input[type='email'],
+input[type='tel'],
 textarea {
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -10,14 +10,46 @@ textarea {
 }
 .input {
 	border-radius: 0 !important;
-	width: 100%;
+	// width: 100%;
+	// display: block;
+	// padding: 0px 20px;
+	// border: 1px solid #eee;
+	background-color: transparent;
+	border: 0;
+	border-bottom: rem(2) #fff solid;
 	display: block;
-	padding: 0px 20px;
-	border: 1px solid #eee;
+	width: 100%;
+	padding: rem(10) rem(5) rem(10) rem(5);
+	color: rgb(0, 0, 0);
 	&._form-focus {
 	}
 	&._form-error {
+		border-bottom: rem(2) solid rgb(255, 0, 0);
+		background-color: rgba(255, 0, 0, 0.2);
+		margin-bottom: rem(0);
 	}
+	&:focus,
+	&:valid {
+		outline: 0;
+		transition: all 0.5s;
+		color: #fff;
+		font-weight: 600;
+		background-color: #a5a5a52a;
+	}
+	&:focus,
+	&:valid {
+		& + label {
+			span {
+				background: linear-gradient(90deg, #bddb06 0%, #08db06 100%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: #00ff08de;
+				background-clip: text;
+				transform: translateY(rem(-40));
+				font-weight: 600;
+			}
+		}
+	}
+	margin-bottom: rem(19);
 }
 .input[placeholder]:not([data-placeholder-nohiden]) {
 	&::placeholder {
@@ -31,4 +63,6 @@ textarea {
 textarea.input {
 	resize: none;
 	padding: 0px 0px;
+	background-color: rgb(255, 255, 255) !important;
+	color: rgb(0, 0, 0) !important;
 }
