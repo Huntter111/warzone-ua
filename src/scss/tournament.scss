@@ -2,6 +2,7 @@
 	background: url('@img/tournaments/background.png') 1% 0 / cover no-repeat;
 	padding-top: rem(100);
 	@include adaptiveValue('padding-bottom', 70, 50);
+	min-height: 100vh;
 	&__container {
 	}
 }
@@ -12,9 +13,9 @@ body {
 	position: relative;
 	// margin: rem(10) 0 rem(50);
 	&:not(:last-child) {
-		margin: rem(10) 0 rem(40);
+		margin: rem(10) 0 rem(35);
 	}
-	@include adaptiveValue('font-size', 20, 16);
+	@include adaptiveValue('font-size', 18, 16);
 }
 
 // .form-control input {
@@ -78,10 +79,11 @@ body {
 .form-register {
 	display: flex;
 	flex-direction: column;
-	row-gap: rem(40);
+	row-gap: rem(10);
 	&__columns {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
+		-moz-column-gap: rem(25);
 		column-gap: rem(25);
 		row-gap: rem(30);
 		@media (max-width: $mobile) {
@@ -94,13 +96,13 @@ body {
 	}
 	&__title {
 		color: #fff;
-		@include adaptiveValue('font-size', 40, 24);
+		@include adaptiveValue('font-size', 40, 20);
 		font-family: 'Jura';
 		font-weight: 700;
-		line-height: 1.5;
+		line-height: 1.4;
 		text-transform: uppercase;
 		&:not(:last-child) {
-			margin-bottom: rem(35);
+			@include adaptiveValue('margin-bottom', 35, 20);
 		}
 		@media (max-width: $tablet) {
 			text-align: center;
@@ -110,8 +112,8 @@ body {
 		display: flex;
 		flex-direction: column;
 		row-gap: rem(10);
-		// @include adaptiveValue('font-size', 20, 16);
-		line-height: math.div(34, 20);
+		@include adaptiveValue('font-size', 18, 16);
+		line-height: math.div(30, 18);
 		label {
 			background: linear-gradient(90deg, #bddb06 0%, #08db06 100%);
 			-webkit-background-clip: text;

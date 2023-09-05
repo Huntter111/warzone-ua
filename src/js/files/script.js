@@ -4,6 +4,9 @@ import {isMobile} from './functions.js';
 import {flsModules} from './modules.js';
 // Підключення маски
 import IMask from 'imask';
+{
+	/* <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>; */
+}
 
 var videos = document.getElementsByClassName('.highlights-video-slide__video');
 
@@ -27,7 +30,15 @@ function formInput() {
 	});
 }
 formInput();
-
+if (document.title === 'Warzone UA') {
+	let isChromeiOS = /CriOS/.test(navigator.userAgent) && /iP(hone|od|ad)/.test(navigator.userAgent);
+	if (isChromeiOS) {
+		let slideImages = document.querySelectorAll('.tournament-result-image__slide img');
+		for (let i = 0; i < slideImages.length; i++) {
+			slideImages[i].style.maxWidth = '85%';
+		}
+	}
+}
 if (document.title === 'Warzone UA - Tournaments') {
 	// Ваш код тут
 	function showMaskInForm() {

@@ -7,7 +7,7 @@
 // Підключаємо слайдер Swiper з node_modules
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
-import Swiper, {Navigation, Pagination} from 'swiper';
+import Swiper, {Navigation, Pagination, EffectCards, EffectCube, Autoplay} from 'swiper';
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay, 
@@ -168,8 +168,113 @@ function initSliders() {
 			on: {},
 		});
 	}
-}
+	if (document.querySelector('.tournament-result__slider')) {
+		// Вказуємо склас потрібного слайдера
+		// Створюємо слайдер
+		new Swiper('.tournament-result__slider', {
+			// Вказуємо склас потрібного слайдера
+			// Підключаємо модулі слайдера
+			// для конкретного випадку
+			modules: [Navigation, Pagination, EffectCube],
+			observer: true,
+			observeParents: true,
+			// delay: 100,
+			slidesPerView: 1,
+			spaceBetween: 0,
+			autoHeight: true,
+			speed: 1000,
+			slideToClickedSlide: false,
+			//touchRatio: 0,
+			//simulateTouch: false,
+			//loop: true,
+			// preloadImages: false,
+			// lazy: {
+			// 	loadOnTransitionStart: false,
+			// 	loadPrevNext: false,
+			// },
+			// watchSlidesProgress: true,
+			// watchSlidesVisability: true,
+			effect: 'cube',
+			shadow: true,
+			shadowOffset: 50,
+			shadowScale: 0.94,
+			slideShadows: true,
+			/*
+			// Ефекти
+			effect: 'fade',
+			autoplay: {
+				delay: 1000,
+				disableOnInteraction: false,
+			},
+			*/
+			// Пагінація
 
+			pagination: {
+				el: '.tournament-result__pagination',
+				clickable: true,
+				dynamicBullets: true,
+				dynamicMainBullets: 1,
+			},
+			// слайд з якого починається
+			initialSlide: 0,
+			// Скроллбар
+
+			// scrollbar: {
+			// 	el: '.swiper-scrollbar',
+			// 	draggable: true,
+			// },
+
+			// Кнопки "вліво/вправо"
+			navigation: {
+				prevEl: '.tournament-result__prev',
+				nextEl: '.tournament-result__next',
+			},
+
+			// Брейкпоінти
+			breakpoints: {
+				280: {
+					slidesPerView: 1,
+					// spaceBetween: 20,
+				},
+				// 992: {
+				// 	slidesPerView: 2,
+				// 	spaceBetween: 100,
+				// },
+			},
+
+			// Події
+			on: {},
+		});
+
+		new Swiper('.tournament-result-image__slider', {
+			modules: [Navigation, Pagination, EffectCards, Autoplay],
+			// курсор перетаскивания
+			grabCursor: true,
+			delay: 100,
+			pagination: {
+				el: '.tournament-result-image__pagination',
+				clickable: true,
+				dynamicBullets: true,
+				dynamicMainBullets: 2,
+			},
+			// slideToClickedSlide: false,
+			// Корректная работа перетаскивания/свайпа
+			nested: true,
+			effect: 'cards',
+			cardsEffect: {
+				slideShadows: true,
+				rotate: true,
+				perSlideRotate: 2,
+				perSlideOffset: 8,
+			},
+			// effect: 'fade',
+			// autoplay: {
+			// 	delay: 3000,
+			// 	disableOnInteraction: false,
+			// },
+		});
+	}
+}
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 function initSlidersScroll() {
 	let sliderScrollItems = document.querySelectorAll('.swiper_scroll');

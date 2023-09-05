@@ -1,10 +1,10 @@
 // Підключення функціоналу "Чертоги Фрілансера"
 // Підключення списку активних модулів
-import {flsModules} from '../modules.js';
+import { flsModules } from '../modules.js';
 // Допоміжні функції
-import {isMobile, _slideUp, _slideDown, _slideToggle, FLS} from '../functions.js';
+import { isMobile, _slideUp, _slideDown, _slideToggle, FLS } from '../functions.js';
 // Модуль прокручування до блоку
-import {gotoBlock} from '../scroll/gotoblock.js';
+import { gotoBlock } from '../scroll/gotoblock.js';
 //================================================================================================================================================================================================================================================================================================================================
 
 /*
@@ -12,7 +12,7 @@ import {gotoBlock} from '../scroll/gotoblock.js';
 */
 
 // Робота із полями форми.
-export function formFieldsInit(options = {viewPass: false, autoHeight: false}) {
+export function formFieldsInit(options = { viewPass: false, autoHeight: false }) {
 	document.body.addEventListener('focusin', function (e) {
 		const targetElement = e.target;
 		if (targetElement.tagName === 'INPUT' || targetElement.tagName === 'TEXTAREA') {
@@ -53,7 +53,9 @@ export function formFieldsInit(options = {viewPass: false, autoHeight: false}) {
 				const startHeight = textarea.hasAttribute('data-autoheight-min')
 					? Number(textarea.dataset.autoheightMin)
 					: Number(textarea.offsetHeight);
-				const maxHeight = textarea.hasAttribute('data-autoheight-max') ? Number(textarea.dataset.autoheightMax) : Infinity;
+				const maxHeight = textarea.hasAttribute('data-autoheight-max')
+					? Number(textarea.dataset.autoheightMax)
+					: Infinity;
 				setHeight(textarea, Math.min(startHeight, maxHeight));
 				textarea.addEventListener('input', () => {
 					if (textarea.scrollHeight > startHeight) {
@@ -75,7 +77,10 @@ export let formValidate = {
 		let formRequiredItems = form.querySelectorAll('*[data-required]');
 		if (formRequiredItems.length) {
 			formRequiredItems.forEach((formRequiredItem) => {
-				if ((formRequiredItem.offsetParent !== null || formRequiredItem.tagName === 'SELECT') && !formRequiredItem.disabled) {
+				if (
+					(formRequiredItem.offsetParent !== null || formRequiredItem.tagName === 'SELECT') &&
+					!formRequiredItem.disabled
+				) {
 					error += this.validateInput(formRequiredItem);
 				}
 			});
@@ -163,7 +168,7 @@ export let formValidate = {
 		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(formRequiredItem.value);
 	},
 	containsHash(value) {
-		return /^\s*[\wа-яА-ЯёЁїЇіІєЄ]+(?:\s+[\wа-яА-ЯёЁїЇіІєЄ]+)*\s*#\s*[0-9]+$/.test(value);
+		return /^\s*[\wа-яА-ЯёЁїЇіІєЄ-]+(?:\s+[\wа-яА-ЯёЁїЇіІєЄ-]+)*\s*#\s*[0-9]+$/.test(value);
 	},
 };
 
