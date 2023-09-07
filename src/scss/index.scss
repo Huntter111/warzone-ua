@@ -780,133 +780,130 @@
 
 //====================================================================================================
 // ! RESULT Tournament
-.page {
-	&__result-tournament {
-	}
-}
-.tournament-result {
-	padding-top: rem(20);
-	// @include adaptiveValue('padding-top', , 40);
-	@include adaptiveValue('padding-bottom', 80, 50);
-	&__container {
-	}
-	&__title {
-		@include adaptiveValue('font-size', 45, 29);
-		text-align: center;
-		line-height: 1.4;
-		font-weight: 600;
-		&:not(:last-child) {
-			@include adaptiveValue('margin-bottom', 50, 30);
-		}
-	}
-	&__slider {
-	}
 
-	&__wrapper {
-		// display: flex;
-		// align-items: center;
-		// justify-content: center;
-	}
+// .tournament-result {
+// 	padding-top: rem(20);
+// 	// @include adaptiveValue('padding-top', , 40);
+// 	@include adaptiveValue('padding-bottom', 80, 50);
+// 	&__container {
+// 	}
+// 	&__title {
+// 		@include adaptiveValue('font-size', 45, 29);
+// 		text-align: center;
+// 		line-height: 1.4;
+// 		font-weight: 600;
+// 		&:not(:last-child) {
+// 			@include adaptiveValue('margin-bottom', 50, 30);
+// 		}
+// 	}
+// 	&__slider {
+// 	}
 
-	&__slide {
-	}
-	&__pagination {
-		// display: block;
-		// top: rem(100) !important;
-		top: rem(30);
-	}
-	&__buttons {
-		display: none;
-		@media (min-width: $mobileSmall) {
-			display: block;
-		}
-		& > button::after,
-		button::before {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			border-radius: 50%;
-			flex: 0 0 rem(40);
-			width: rem(40);
-			height: rem(40);
-			color: #0d2106;
-			font-size: rem(22) !important;
-			background: linear-gradient(90deg, #cfee05 0%, #08db06 100%);
-			@media (max-width: em(360)) {
-				flex: 0 0 rem(30);
-				width: rem(30);
-				height: rem(30);
-				font-size: rem(18) !important;
-			}
-		}
-	}
-	&__prev {
-	}
+// 	&__wrapper {
+// 		// display: flex;
+// 		// align-items: center;
+// 		// justify-content: center;
+// 	}
 
-	&__next {
-	}
-}
+// 	&__slide {
+// 	}
+// 	&__pagination {
+// 		// display: block;
+// 		// top: rem(100) !important;
+// 		top: rem(30);
+// 	}
+// 	&__buttons {
+// 		display: none;
+// 		@media (min-width: $mobileSmall) {
+// 			display: block;
+// 		}
+// 		& > button::after,
+// 		button::before {
+// 			display: flex;
+// 			align-items: center;
+// 			justify-content: center;
+// 			border-radius: 50%;
+// 			flex: 0 0 rem(40);
+// 			width: rem(40);
+// 			height: rem(40);
+// 			color: #0d2106;
+// 			font-size: rem(22) !important;
+// 			background: linear-gradient(90deg, #cfee05 0%, #08db06 100%);
+// 			@media (max-width: em(360)) {
+// 				flex: 0 0 rem(30);
+// 				width: rem(30);
+// 				height: rem(30);
+// 				font-size: rem(18) !important;
+// 			}
+// 		}
+// 	}
+// 	&__prev {
+// 	}
 
-.tournament-result-image {
-	&__slider {
-		// width: 240px;
-		// height: 320px;
-		// height: rem(450);
-		// background: #fff;
-	}
+// 	&__next {
+// 	}
+// }
 
-	&__wrapper {
-	}
+// .tournament-result-image {
+// 	&__slider {
+// 		// width: 240px;
+// 		// height: 320px;
+// 		// height: rem(450);
+// 		// background: #fff;
+// 	}
 
-	&__slide {
-		// height: rem(450);
-		img {
-			max-width: 95%;
-			border-radius: rem(10);
+// 	&__wrapper {
+// 	}
 
-			// @media (any-hover: hover) {
-			// 	&:hover {
-			// 		cursor: grab;
-			// 	}
-			// }
-		}
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
+// 	&__slide {
+// 		// height: rem(450);
+// 		img {
+// 			max-width: 95%;
+// 			border-radius: rem(10);
 
-	&__pagination {
-		// top: rem(-50) !important;
-		// position: absolute !important;
-		// position: relative !important;
-		// bottom: 0;
-		&::after,
-		&::before {
-			background: rgba(124, 245, 31, 0.9);
-			font-size: rem(16) !important;
-		}
-		@include adaptiveValue('top', -40, -25, 0, 767, 479);
-		& .swiper-pagination-bullet {
-			@media (min-width: $mobileSmall) {
-				width: rem(18);
-				height: rem(18);
-			}
-			@media (max-width: em(350)) {
-				top: -20 !important;
-				width: rem(15);
-				height: rem(15);
-			}
-			width: rem(18);
-			height: rem(18);
-			border: rem(2) solid #33ff00;
-			background: transparent;
-		}
-		& .swiper-pagination-bullet-active {
-			border: rem(2) solid #33ff0085;
-			background: linear-gradient(90deg, #cdec10 10%, #08db06 100%);
-		}
-	}
-}
+// 			// @media (any-hover: hover) {
+// 			// 	&:hover {
+// 			// 		cursor: grab;
+// 			// 	}
+// 			// }
+// 		}
+// 		display: flex;
+// 		align-items: center;
+// 		justify-content: center;
+// 	}
+
+// 	&__pagination {
+// 		// top: rem(-50) !important;
+// 		// position: absolute !important;
+// 		// position: relative !important;
+// 		// bottom: 0;
+// 		&::after,
+// 		&::before {
+// 			background: rgba(124, 245, 31, 0.9);
+// 			font-size: rem(16) !important;
+// 		}
+// 		@include adaptiveValue('top', -40, -25, 0, 767, 479);
+// 		& .swiper-pagination-bullet {
+// 			@media (min-width: $mobileSmall) {
+// 				width: rem(18);
+// 				height: rem(18);
+// 			}
+// 			@media (max-width: em(350)) {
+// 				top: -20 !important;
+// 				width: rem(15);
+// 				height: rem(15);
+// 			}
+// 			width: rem(18);
+// 			height: rem(18);
+// 			border: rem(2) solid #33ff00;
+// 			background: transparent;
+// 		}
+// 		& .swiper-pagination-bullet-active {
+// 			border: rem(2) solid #33ff0085;
+// 			background: linear-gradient(90deg, #cdec10 10%, #08db06 100%);
+// 		}
+// 	}
+// }
 
 //====================================================================================================
 // ! ACTION
