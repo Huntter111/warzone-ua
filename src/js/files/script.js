@@ -1,9 +1,10 @@
 // Підключення функціоналу "Чертоги Фрілансера"
-import {isMobile} from './functions.js';
+import { isMobile } from './functions.js';
 // Підключення списку активних модулів
-import {flsModules} from './modules.js';
+import { flsModules } from './modules.js';
 // Підключення маски
 import IMask from 'imask';
+import Inputmask from 'inputmask';
 {
 	/* <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>; */
 }
@@ -30,7 +31,7 @@ function formInput() {
 	});
 }
 formInput();
-if (document.title === 'Warzone UA') {
+if (document.title === 'UACOD: Україномовна спільнота Call of Duty: Warzone та Warzone 2 Discord UA') {
 	let isChromeiOS = /CriOS/.test(navigator.userAgent) && /iP(hone|od|ad)/.test(navigator.userAgent);
 	if (isChromeiOS) {
 		let slideImages = document.querySelectorAll('.tournament-result-image__slide img');
@@ -39,7 +40,7 @@ if (document.title === 'Warzone UA') {
 		}
 	}
 }
-if (document.title === 'Warzone UA - Tournaments') {
+if (document.title === 'UACOD - Tournament') {
 	// Ваш код тут
 	function showMaskInForm() {
 		const element = document.getElementById('mask');
@@ -68,24 +69,29 @@ if (document.title === 'Warzone UA - Tournaments') {
 	}
 	getMaxLetterTextarea();
 }
-// const form = document.querySelector('.form-register');
-// form.addEventListener('submit', function (e) {
-// 	e.preventDefault();
-// 	sendMessage(form);
-// });
-// async function sendMessage(form) {
-// 	const formData = new FormData(form);
-// 	if (formData) {
-// 		const url = 'files/sendtotelegram.php';
-// 		const response = await fetch(url, {
-// 			method: 'POST',
-// 			body: formData,
-// 		});
-// 		if (response.ok) {
-// 			form.reset();
-// 			alert('Form sent');
-// 		} else {
-// 			alert('Error!');
+
+// document.addEventListener('DOMContentLoaded', function () {
+// 	const form = document.querySelector('.form-register.form');
+// 	const inputMask = document.getElementById('phoneInput');
+
+// 	function initializeInputMask(inputElement) {
+// 		if (inputElement) {
+// 			let im = new Inputmask('+38(099) 999-99-99', { showMaskOnHover: false });
+// 			im.mask(inputElement);
+// 			const form = inputElement.closest('form');
+// 			if (form) {
+// 				form.addEventListener('submit', function (event) {
+// 					const maskedValue = inputElement.inputmask.unmaskedvalue();
+// 					if (maskedValue.length < 9) {
+// 						event.preventDefault();
+// 						// alert('Пожалуйста, введите полный номер телефона.');
+// 					}
+// 				});
+// 			}
 // 		}
 // 	}
-// }
+
+// 	if (form && inputMask) {
+// 		initializeInputMask(inputMask);
+// 	}
+// });

@@ -10,25 +10,18 @@
 						<!-- data-dev -->
 						<form
 							data-goto-error
-							action="files/send_to_telegram_quads.php"
+							action="files/send_to_telegram_duo.php"
 							class="form-register form"
 							method="POST"
 						>
 							<h1 class="form-register__title">
-								Реєстрація на турнір <span class="main-text">14.01.2024</span>&nbsp;-&nbsp;Kill Race TRIOS
+								Реєстрація на турнір <span class="main-text">24.12.2023</span>&nbsp;-&nbsp;2x2 "GUN FIGHT"
 							</h1>
 							<div class="form-register__columns">
 								<div class="form-register__column">
 									<div class="form-control form-register__line">
 										<input name="name_team" type="text" required class="input" />
 										<label>Назва команди</label>
-										<!-- <label>
-                           <span style="transition-delay: 0ms">E</span>
-                           <span style="transition-delay: 50ms">m</span>
-                           <span style="transition-delay: 100ms">a</span>
-                           <span style="transition-delay: 150ms">i</span>
-                           <span style="transition-delay: 200ms">l</span>
-                        </label> -->
 									</div>
 									<div class="form-control form-register__line">
 										<input name="name_captain" type="text" required class="input" />
@@ -38,28 +31,10 @@
 										<input name="name_two" type="text" required class="input" />
 										<label>Hікнейм другого гравця</label>
 									</div>
-									<div class="form-control form-register__line">
-										<input name="name_three" type="text" required class="input" />
-										<label>Hікнейм третього гравця </label>
-									</div>
-									<div class="form-control form-register__line">
-										<input name="name_four" type="text" required class="input" />
-										<label>Hікнейм четвертого гравця </label>
-									</div>
 								</div>
 								<div class="form-register__column">
 									<div class="form-control form-register__line">
 										<input id="mask" name="phone_captain" type="text" required class="input" />
-										<!-- <input
-											data-validate
-											data-error="Введіть коректний телефон"
-											data-required="phone"
-											id="phoneInput"
-											class="form-send__input input"
-											type="tel"
-											name="phone_captain"
-											required
-										/> -->
 										<label>Телефон капітана команди</label>
 									</div>
 									<div class="form-control form-register__line">
@@ -86,30 +61,6 @@
 											class="input"
 										/>
 										<label>Activision ID другого гравця</label>
-									</div>
-									<div class="form-control form-register__line">
-										<input
-											data-validate
-											data-error="Невірний Activision ID"
-											data-required="hash"
-											name="id_three"
-											type="text"
-											required
-											class="input"
-										/>
-										<label>Activision ID третього гравця</label>
-									</div>
-									<div class="form-control form-register__line">
-										<input
-											data-validate
-											data-error="Невірний Activision ID"
-											data-required="hash"
-											name="id_four"
-											type="text"
-											required
-											class="input"
-										/>
-										<label>Activision ID четвертого гравця</label>
 									</div>
 								</div>
 							</div>

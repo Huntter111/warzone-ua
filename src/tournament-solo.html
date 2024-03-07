@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+	@@include('html/_head.htm',{ "title":"UACOD - Tournament Kill of the Hill" })
+	<body>
+		<div class="wrapper">
+			@@include('html/_header-tourunament.htm',{})
+			<main class="tournament">
+				<section class="tournament-register register-tournament">
+					<div class="register-tournament__container">
+						<!-- data-dev -->
+						<form action="files/send_to_telegram_solo.php" class="form-register form" method="POST">
+							<h1 class="form-register__title">
+								Перший турнір по MWIII <span class="main-text">19.11.2023</span>&nbsp;-&nbsp;King of the Hill
+							</h1>
+							<div class="form-register__columns form-register__columns--vertical">
+								<div class="form-register__column">
+									<div class="form-control form-register__line">
+										<input name="name_person" type="text" required class="input" />
+										<label>Hікнейм гравця</label>
+									</div>
+								</div>
+								<div class="form-register__column">
+									<div class="form-control form-register__line">
+										<!-- <input type="text" name="telegramID" required /> -->
+										<!-- <input id="mask" name="phone_captain" type="text" required class="input" /> -->
+										<input name="telegram_ID" type="text" required class="input" />
+										<label>Телеграм ID гравця для зв'язку</label>
+									</div>
+									<div class="form-control form-register__line">
+										<input
+											data-validate
+											data-error="Невірний Activision ID"
+											data-required="hash"
+											name="id_person"
+											type="text"
+											required
+											class="input"
+										/>
+										<label>Activision ID гравця</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-register__textarea">
+								<label>Побажання, запитання, відгук (*необов’язково)</label>
+
+								<textarea
+									id="myTextarea"
+									type="text"
+									autocomplete="off"
+									name="message"
+									placeholder="Текст"
+									data-error="Помилка"
+									class="input"
+								></textarea>
+							</div>
+							<button type="submit" class="form-register__button">
+								<span class="main-text">Відправити</span>
+							</button>
+							<a data-popup="#thank-you" href="#"></a>
+							<a data-popup="#thank-you-error" href="#"></a>
+						</form>
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_thank-you.htm',{}) @@include('html/_thank-you-error.htm',{}) @@include('html/_js.htm',{})
+	</body>
+</html>

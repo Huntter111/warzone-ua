@@ -1,30 +1,49 @@
 //====================================================================================================
 .header {
-	padding-top: rem(10);
-	padding-bottom: rem(10);
-	// @include adaptiveValue('padding-top', 30, 15, 0, 767, 500);
-	// @include adaptiveValue('padding-bottom', 30, 15, 0, 767, 500);
-	position: fixed;
-	width: 100%;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 100;
-	&._header-scroll {
-		padding-top: rem(10);
-		padding-bottom: rem(10);
-		background-color: rgba(21, 32, 18, 0.98);
-		transition: border-bottom 0.3s ease 0s, background-color 0.3s ease 0s, padding-bottom 0.3s ease 0s,
-			padding-top 0.3s ease 0s;
-		border-bottom: rem(1) solid #089706;
-	}
-	&--tournament {
-		padding-top: rem(10);
-		padding-bottom: rem(10);
-		background-color: rgba(21, 32, 18, 0.98);
-		border-bottom: rem(1) solid #089706;
-	}
+	font-family: 'Jura';
+	// padding-top: rem(5);
+	// padding-bottom: rem(5);
 	&__container {
+		padding-top: rem(10);
+		// padding-bottom: rem(10);
+		// @include adaptiveValue('padding-top', 30, 15, 0, 767, 500);
+		// @include adaptiveValue('padding-bottom', 30, 15, 0, 767, 500);
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 100;
+		transition: border-bottom 0.3s ease 0s, background-color 0.3s ease 0s, padding-bottom 0.3s ease 0s,
+			padding-top 0.3s ease 0s, translateY 0.3s ease 0s, border-radius 0.3s ease 0s;
+		._header-scroll & {
+			padding-top: rem(10);
+			padding-bottom: rem(10);
+			background-color: rgba(21, 32, 18, 0.9);
+			border-bottom: rem(1) solid #089706;
+			// background-color: rgba(51, 51, 51, 0.6);
+			// border: rem(1) solid #089706;
+			// border-radius: rem(5);
+			// transform: translateY(rem(10));
+		}
+		@media (hover: hover) and (min-width: $mobile) {
+			._header-scroll & {
+				padding-top: rem(10);
+				padding-bottom: rem(10);
+
+				background-color: rgba(21, 32, 18, 0.9);
+				// background-color: rgba(51, 51, 51, 0.6);
+				border: rem(1) solid #089706;
+				border-radius: rem(5);
+				transform: translateY(rem(10));
+			}
+		}
+		&--tournament {
+			padding-top: rem(10);
+			padding-bottom: rem(10);
+			background-color: rgba(21, 32, 18, 0.98);
+			border-bottom: rem(1) solid #089706;
+		}
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -33,11 +52,10 @@
 	&__logo {
 		position: relative;
 		z-index: 5;
+
 		img {
-			@include adaptiveValue('width', 50, 35, 0, 1110, 991);
-			@media (max-width: $mobileSmall) {
-				width: rem(40);
-			}
+			max-width: 100%;
+			transform: translateY(5px);
 		}
 	}
 	&__menu {
@@ -71,10 +89,10 @@
 				background: #0d2106;
 				transition: right 0.3s cubic-bezier(0, 0, 0.2, 1) 0s;
 				border-bottom: rem(1) solid #089706;
-				min-height: rem(69);
-				@media (max-width: em(461)) {
-					min-height: rem(70.98);
-				}
+				min-height: rem(81);
+				// @media (max-width: em(461)) {
+				// 	min-height: rem(71.98);
+				// }
 			}
 			.menu-open & {
 				right: 0;
@@ -145,6 +163,9 @@
 	&__icon {
 	}
 	&__button {
+		@media (min-width: $mobile) {
+			min-width: toRem(230);
+		}
 		position: relative;
 		z-index: 10;
 		display: none;

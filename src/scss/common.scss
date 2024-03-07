@@ -6,6 +6,7 @@
 	background-clip: text;
 	text-fill-color: transparent;
 }
+
 .hide-play-btn {
 	display: none;
 }
@@ -28,6 +29,14 @@
 	}
 
 	&__content {
+		@include adaptiveValue('padding-top', 80, 40);
+		@include adaptiveValue('padding-bottom', 100, 40);
+		@include adaptiveValue('padding-right', 120, 25);
+		@include adaptiveValue('padding-left', 120, 25);
+		border-radius: rem(10);
+		&--what {
+			background-color: #ababab;
+		}
 	}
 
 	&__close {
@@ -40,12 +49,11 @@
 	&__wrapper {
 	}
 	&__content {
-		@include adaptiveValue('padding-top', 80, 40);
-		@include adaptiveValue('padding-bottom', 100, 40);
-		@include adaptiveValue('padding-right', 120, 25);
-		@include adaptiveValue('padding-left', 120, 25);
-		padding: 100px 120px;
-		border-radius: rem(20);
+		// @include adaptiveValue('padding-top', 80, 40);
+		// @include adaptiveValue('padding-bottom', 100, 40);
+		// @include adaptiveValue('padding-right', 120, 25);
+		// @include adaptiveValue('padding-left', 120, 25);
+		// border-radius: rem(10);
 		background: #bddb06;
 		&--error {
 			background-color: #e7e7e7;
@@ -60,10 +68,17 @@
 		line-height: 1.3;
 		display: flex;
 		flex-direction: column;
-		row-gap: rem(40);
+		row-gap: rem(25);
 		&--error {
 			font-weight: 900;
 			color: #ff0000;
+		}
+	}
+	&__image {
+		text-align: center;
+		img {
+			max-width: 100%;
+			max-height: 80vh;
 		}
 	}
 	&__close {
@@ -84,16 +99,33 @@
 		}
 	}
 	&__text {
-		a {
+		& > a {
 			text-decoration: underline;
+			transition: all 0.2s ease 0s;
+			@media (any-hover: hover) {
+				&:hover {
+					color: #3c00ff;
+				}
+			}
+		}
+
+		&--data {
+			font-weight: 900;
 		}
 	}
 
 	&__link {
 		display: flex;
 		align-items: baseline;
+		-moz-column-gap: rem(20);
 		column-gap: rem(20);
 		text-decoration: underline;
+		transition: all 0.2s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: #3c00ff;
+			}
+		}
 		@media (max-width: $mobile) {
 			align-items: center;
 		}
@@ -104,3 +136,13 @@
 		}
 	}
 }
+// .popup-text {
+// 	&__link {
+// 		text-decoration: underline;
+// 		@media (any-hover: hover) {
+// 			&:hover {
+// 				color: #08db06;
+// 			}
+// 		}
+// 	}
+// }

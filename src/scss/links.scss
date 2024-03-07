@@ -1,0 +1,141 @@
+.page-links {
+	background: #1c132f;
+}
+.page {
+	&__navigate {
+		font-family: 'Montserrat';
+		display: flex;
+		justify-content: center;
+		height: 100%;
+		overflow-y: auto;
+		padding-right: rem(12);
+		padding-left: rem(12);
+		padding-bottom: rem(150);
+		padding-top: rem(50);
+		@media (max-width: $mobile) {
+			padding-top: rem(30);
+			padding-bottom: rem(50);
+		}
+	}
+}
+.links {
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		border-radius: rem(25);
+		background: #2a2045;
+		padding: rem(40) rem(30);
+		@media (max-width: em(650)) {
+			padding: rem(20) rem(20);
+		}
+		@media (min-width: $mobile) {
+			min-width: rem(600);
+		}
+		min-height: rem(600);
+	}
+
+	&__head {
+		font-family: 'Montserrat';
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		row-gap: rem(20);
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 50, 30);
+		}
+	}
+
+	&__cards {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(30);
+		@media (max-width: $mobileSmall) {
+			row-gap: rem(25);
+		}
+	}
+}
+.head-link {
+	&__image {
+		img {
+			height: rem(100);
+			width: rem(100);
+		}
+	}
+
+	&__body {
+		display: flex;
+		column-gap: rem(10);
+	}
+
+	&__name {
+	}
+
+	&__icon {
+	}
+}
+.card-link {
+	display: grid;
+	align-items: center;
+	grid-template-columns: repeat(3, 1fr);
+	// display: flex;
+	// align-items: center;
+	// gap: rem(170);
+	// width: rem(540);
+
+	padding: rem(10) rem(15);
+	border-radius: rem(15);
+	transition: all 0.3s;
+	&:active {
+		transform: scale(0.98);
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			opacity: 0.9;
+			transform: translateY(rem(-2));
+		}
+	}
+	& > svg {
+		fill: #fff;
+		width: rem(30);
+		height: rem(30);
+	}
+	&--discord {
+		// align-items: center;
+		background-color: #5865f2;
+	}
+	&--telegram {
+		background-color: #1f9bda;
+	}
+	&--tournament {
+		background-color: #eb6e00;
+	}
+	&--web {
+		background-color: #014300;
+	}
+	&__icon {
+	}
+
+	&__headline {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		row-gap: rem(5);
+		color: #fff;
+		font-family: Montserrat;
+	}
+
+	&__title {
+		color: #fff;
+		font-size: rem(18);
+		font-weight: 500;
+		text-transform: capitalize;
+	}
+
+	&__sub-title {
+		font-size: rem(16);
+		font-weight: 400;
+		white-space: nowrap;
+	}
+}
+.card-link--discord {
+}

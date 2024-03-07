@@ -120,6 +120,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$idTwo = $_POST["id_two"];
 	$idThree = $_POST["id_three"];
 	$idFour = $_POST["id_four"];
+	$dsIDCaptain = $_POST["discord_id_capitan"];
+	// $dsIDTwo = $_POST["discord_id_two"];
+	// $dsIDThree = $_POST["discord_id_three"];
+	// $dsIDFour = $_POST["discord_id_four"];
 	$message = $_POST["message"];
 
 	// Налаштування Telegram-бота
@@ -127,18 +131,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$chatId = "-1001686641413";
 
 	// Формування повідомлення
-	$text = "<b>Нова реєстрація на турнір</b>\n";
+	$text = "<b>Нова реєстрація Тріо Кастомка Kill Race</b>\n";
 	$text .= "<b>Назва команди:</b> " . $nameTeam . "\n";
 	$text .= "<b>Nick Капітана:</b> " . $nameCaptain . "\n";
 	$text .= "<b>Nick 2-го гравця:</b> " . $nameTwo . "\n";
 	$text .= "<b>Nick 3-го гравця:</b> " . $nameThree . "\n";
 	$text .= "<b>Nick 4-го гравця:</b> " . $nameFour . "\n";
+	$text .= "==============================\n";
 	$text .= "<b>Телефон капітана команди:</b> " . $phoneCaptain . "\n";
-	$text .= "<b>Activision ID Капітана:</b> " . $idCaptain . "\n";
-	$text .= "<b>Activision ID 2-го гравця:</b> " . $idTwo . "\n";
-	$text .= "<b>Activision ID 3-го гравця:</b> " . $idThree . "\n";
-	$text .= "<b>Activision ID 4-го гравця:</b> " . $idFour . "\n";
-	$text .= "<b>Побажання, запитання, відгук:</b> " . $message;
+	$text .= "<b>ACT ID Капітана:</b> " . $idCaptain . "\n";
+	$text .= "<b>ACT ID 2-го гравця:</b> " . $idTwo . "\n";
+	$text .= "<b>ACT ID 3-го гравця:</b> " . $idThree . "\n";
+	$text .= "<b>ACT ID 4-го гравця:</b> " . $idFour . "\n";
+	$text .= "==============================\n";
+	// ================================================================
+	$text .= "<b>DS ID Капітана:</b> " . $dsIDCaptain . "\n";
+	// $text .= "<b>DS ID 2-го гравця:</b> " . $dsIDTwo . "\n";
+	// $text .= "<b>DS ID 3-го гравця:</b> " . $dsIDThree . "\n";
+	// $text .= "<b>DS ID 4-го гравця:</b> " . $dsIDFour . "\n";
+	// $text .= "<b>Побажання, запитання, відгук:</b> " . $message;
 
 	// Відправка повідомлення в Telegram
 	$url = "https://api.telegram.org/bot" . $botToken . "/sendMessage";
